@@ -13,6 +13,7 @@ $understrap_includes = array(
 	'/setup.php',                           // Theme setup and custom theme supports.
 	'/widgets.php',                         // Register widget area.
 	'/enqueue.php',                         // Enqueue scripts and styles.
+	'/cpt.php',                         	// Enqueue CPT custom File.
 	'/template-tags.php',                   // Custom template tags for this theme.
 	'/pagination.php',                      // Custom pagination for this theme.
 	'/hooks.php',                           // Custom hooks.
@@ -28,4 +29,35 @@ $understrap_includes = array(
 
 foreach ( $understrap_includes as $file ) {
 	require_once get_template_directory() . '/inc' . $file;
+}
+
+
+add_filter('acf/settings/save_json', 'my_acf_json_save_point');
+ 
+function my_acf_json_save_point( $path ) {
+    
+    // update path
+    $path = get_stylesheet_directory() . '/acf-json';
+    
+    
+    // return
+    return $path;
+    
+}
+
+add_filter('acf/settings/load_json', 'my_acf_json_load_point');
+
+function my_acf_json_load_point( $paths ) {
+    
+    // remove original path (optional)
+    unset($paths[0]);
+    
+    
+    // append path
+    $paths[] = get_stylesheet_directory() . '/acf-json';
+    
+    
+    // return
+    return $paths;
+    
 }
