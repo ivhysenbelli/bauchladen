@@ -1,0 +1,24 @@
+// The footer file
+
+#wrapper-footer-full {
+  width: 100%;
+  height: 254px;
+  padding: 72px 0 52px 0;
+  background-color: $nero;
+
+  #text-3 {
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 300;
+
+    a {
+      color: $zambezi;
+
+      &:hover {
+        text-decoration: none;
+        color: $white;
+        transition-duration: 1s;
+      }
+    }
+  }
+}
