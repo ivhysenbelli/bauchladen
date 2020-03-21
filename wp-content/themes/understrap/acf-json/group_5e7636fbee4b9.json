@@ -18,10 +18,32 @@
             "layouts": {
                 "layout_5e763726f3b06": {
                     "key": "layout_5e763726f3b06",
-                    "name": "",
-                    "label": "",
+                    "name": "section_main_banner",
+                    "label": "Section: Main Banner",
                     "display": "block",
-                    "sub_fields": [],
+                    "sub_fields": [
+                        {
+                            "key": "field_5e7662bd29f33",
+                            "label": "Main Banner Section",
+                            "name": "main_banner_section",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5e76372fed84f"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
                     "min": "",
                     "max": ""
                 }
@@ -48,5 +70,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1584805673
+    "modified": 1584816876
 }
