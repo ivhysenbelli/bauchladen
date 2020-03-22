@@ -46,9 +46,40 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_5e7789a91be5d": {
+                    "key": "layout_5e7789a91be5d",
+                    "name": "section:_two_columns",
+                    "label": "Section: Two Columns",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5e7789b11be5e",
+                            "label": "Two Columns Section",
+                            "name": "two_columns_section",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5e763a229a59d"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
-            "button_label": "Add Row",
+            "button_label": "Add Section",
             "min": "",
             "max": ""
         }
@@ -70,5 +101,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1584816876
+    "modified": 1584892425
 }
