@@ -1,5 +1,6 @@
 .section-two-columns {
     min-height: auto;
+    overflow: hidden;
 
     &.has-bg {
         background-color: $whisper;
@@ -51,5 +52,12 @@
             }
         }
 
+    }
+    .flex-row-reverse{
+		.data-col{
+			.data{
+				padding-left: 80px;
+			}
+		}
     }
 }
