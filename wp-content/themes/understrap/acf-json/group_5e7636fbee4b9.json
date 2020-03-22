@@ -49,7 +49,7 @@
                 },
                 "layout_5e7789a91be5d": {
                     "key": "layout_5e7789a91be5d",
-                    "name": "section:_two_columns",
+                    "name": "section_two_columns",
                     "label": "Section: Two Columns",
                     "display": "block",
                     "sub_fields": [
@@ -101,5 +101,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1584892425
+    "modified": 1584892905
 }

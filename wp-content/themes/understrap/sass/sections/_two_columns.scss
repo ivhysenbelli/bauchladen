@@ -1,0 +1,55 @@
+.section-two-columns {
+    min-height: auto;
+
+    &.has-bg {
+        background-color: $whisper;
+    }
+
+    .image-col {}
+
+    .data-col {
+        display: flex;
+        align-items: flex-start;
+
+        .data {
+            margin-top: 80px;
+            display: flex;
+            flex-direction: column;
+            max-width: 550px;
+
+            @include media-breakpoint-down(md) {
+                padding: 0 2em 80px;
+            }
+
+            .title {
+                h2 {
+                    font-size: 47px;
+                    color: $black;
+
+                    @include media-breakpoint-down(md) {
+                        font-size: 2rem;
+                    }
+                }
+
+                margin-bottom: 1em;
+
+                &:after {
+                    content: '';
+                    display: block;
+                    height: 2px;
+                    width: 70px;
+                    background-color: $primary;
+
+                }
+            }
+
+            .description {
+            	p{
+            		font-size: 1rem;
+            		color: $zambezi;
+            	}
+            }
+        }
+
+    }
+}
