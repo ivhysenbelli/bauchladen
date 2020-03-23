@@ -5,6 +5,12 @@
     height: 100px;
     position: fixed;
     z-index: 100;
+    transition: all .3s ease;
+    .navbar-brand{
+        img{
+            display: none;
+        }
+    }
 
     #main-nav {
         background-color: transparent !important;
@@ -34,6 +40,15 @@
                         color: $primary;
                     }
                 }
+            }
+        }
+    }
+    &.scrolled{
+        background-color: rgba($white, 0.8);
+        height: 60px;
+        .navbar-brand{
+            img{
+                display: block;
             }
         }
     }
