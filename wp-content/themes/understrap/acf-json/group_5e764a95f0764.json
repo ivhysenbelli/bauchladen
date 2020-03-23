@@ -3,6 +3,22 @@
     "title": "Template: About Me",
     "fields": [
         {
+            "key": "field_5e78dcf76ce02",
+            "label": "Main Data",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
             "key": "field_5e764a9d8fd8b",
             "label": "Page Title",
             "name": "page_title",
@@ -68,6 +84,22 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
+        },
+        {
+            "key": "field_5e78dd026ce03",
+            "label": "Tabs",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
         },
         {
             "key": "field_5e764ac88fd8e",
@@ -143,8 +175,10 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "the_content"
+    ],
     "active": 1,
     "description": "",
-    "modified": 1584810728
+    "modified": 1584979220
 }

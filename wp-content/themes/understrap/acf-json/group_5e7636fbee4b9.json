@@ -77,6 +77,223 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_5e78d8ad52b76": {
+                    "key": "layout_5e78d8ad52b76",
+                    "name": "section_links",
+                    "label": "Section: Links",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5e78d8b452b77",
+                            "label": "Links Section",
+                            "name": "links_section",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5e763e144251b"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5e78d8d052b78": {
+                    "key": "layout_5e78d8d052b78",
+                    "name": "section_image_text",
+                    "label": "Section Image\/Text",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5e78d92a52b79",
+                            "label": "Image\/Text Section",
+                            "name": "image_text_section",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5e763f84592f4"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5e78d94c52b7a": {
+                    "key": "layout_5e78d94c52b7a",
+                    "name": "section_testimonials",
+                    "label": "Section: Testimonials",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5e78d95852b7b",
+                            "label": "Testimonials Section",
+                            "name": "testimonials_section",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5e76419ef2d4d"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5e78d97b52b7c": {
+                    "key": "layout_5e78d97b52b7c",
+                    "name": "section_termine",
+                    "label": "Section: Termine",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5e78d98952b7d",
+                            "label": "Termine Section",
+                            "name": "termine_section",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5e763a7bd3ece"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5e78d9d452b7e": {
+                    "key": "layout_5e78d9d452b7e",
+                    "name": "section_text",
+                    "label": "Section: Text",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5e78d9db52b7f",
+                            "label": "Text Section",
+                            "name": "text_section",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5e763bc14391e"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5e78da3f52b80": {
+                    "key": "layout_5e78da3f52b80",
+                    "name": "section_videos",
+                    "label": "Section: Videos",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5e78da4652b81",
+                            "label": "Videos Section",
+                            "name": "videos_section",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5e7639ca09357"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5e78ddc10e66b": {
+                    "key": "layout_5e78ddc10e66b",
+                    "name": "section_references",
+                    "label": "Section: References",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5e78ddca0e66c",
+                            "label": "References Section",
+                            "name": "references_section",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5e764b3006d71"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Add Section",
@@ -101,5 +318,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1584892905
+    "modified": 1584979436
 }
