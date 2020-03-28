@@ -1,15 +1,28 @@
 // This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
 
 body {
-    font-family: $nunito;
-    color: $zambezi;
+	font-family: $nunito;
+	color: $zambezi;
 }
 
 section {
-    margin: 0 -15px 100px;
-    font-family: $raleway;
-    padding: 0 2em;
-    .title{
-    	margin-bottom: 1.5em;
-    }
+	margin: 0 -15px 100px;
+	padding: 0 2em;
+
+	.title {
+		font-family: $raleway;
+		margin-bottom: 1.5em;
+	}
+
+	.subtitle {
+		margin-bottom: 3em;
+
+		p {
+			font-family: $nunito;
+			font-size: 16px;
+			font-weight: 400;
+			margin-bottom: 0;
+			line-height: 22px;
+		}
+	}
 }

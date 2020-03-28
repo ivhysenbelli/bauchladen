@@ -1,7 +1,11 @@
 .section-imge-text {
+	img {
+		margin-bottom: 2em;
+	}
+
 	.title {
 		text-align: center;
-		margin: 0 auto 2em;
+		margin: 0 auto 1.5em;
 		color: $black;
 
 		h2 {
@@ -20,6 +24,8 @@
 	}
 
 	.single-col {
+		margin-bottom: 2em;
+
 		@include media-breakpoint-down(md) {
 			margin-bottom: 2em;
 		}
