@@ -1,3 +1,27 @@
-.section-imge-text{
-  background: green;
+.section-imge-text {
+	.title {
+		text-align: center;
+		margin: 0 auto 2em;
+		color: $black;
+
+		h2 {
+			font-weight: 500;
+			font-size: 47px;
+		}
+
+		&:after {
+			content: '';
+			display: block;
+			height: 2px;
+			width: 70px;
+			background-color: $primary;
+			margin: 0 auto;
+		}
+	}
+
+	.single-col {
+		@include media-breakpoint-down(md) {
+			margin-bottom: 2em;
+		}
+	}
 }

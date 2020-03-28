@@ -1,0 +1,15 @@
+.section-videos {
+	min-height: auto;
+
+	.single-col {
+		.title {
+			font-size: 17px;
+			font-weight: 600;
+			margin-bottom: .25em;
+		}
+
+		@include media-breakpoint-down (md) {
+			margin-bottom: 1.5em;
+		}
+	}
+}
