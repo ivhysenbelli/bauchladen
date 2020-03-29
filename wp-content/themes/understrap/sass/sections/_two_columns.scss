@@ -1,6 +1,7 @@
 .section-two-columns {
     min-height: auto;
     overflow: hidden;
+    padding: 0;
 
     &.has-bg {
         background-color: $whisper;
