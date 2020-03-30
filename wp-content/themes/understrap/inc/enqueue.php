@@ -19,10 +19,11 @@ if ( ! function_exists( 'understrap_scripts' ) ) {
 
 		$css_version = $theme_version . '.' . filemtime( get_template_directory() . '/css/theme.min.css' );
 		wp_enqueue_style( 'understrap-styles', get_template_directory_uri() . '/css/theme.min.css', array(), $css_version );
-
-		wp_enqueue_script( 'owlcarousel', get_template_directory_uri() . '/js/owl.carousel.min.js', array( 'jquery' ), false, true );
 		wp_enqueue_style( 'owl-carousel', get_template_directory_uri() . '/css/owl.carousel.min.css');
 		wp_enqueue_style( 'owl-theme', get_template_directory_uri() . '/css/owl.theme.default.min.css');
+		
+		wp_enqueue_script( 'owlcarousel', get_template_directory_uri() . '/js/owl.carousel.min.js', array( 'jquery' ), false, true );
+
 
 		wp_enqueue_script( 'jquery' );
 

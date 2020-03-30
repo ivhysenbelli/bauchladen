@@ -61,3 +61,7 @@ function my_acf_json_load_point( $paths ) {
     return $paths;
     
 }
+
+	wp_enqueue_style( 'jquery-ui-css-air', 'https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css');
+	wp_enqueue_script('flatpicker-date', 'https://cdn.jsdelivr.net/npm/flatpickr');
+	wp_enqueue_script('flatpickr-date-de', 'https://npmcdn.com/flatpickr/dist/l10n/de.js');
