@@ -2,14 +2,9 @@
 #wrapper-navbar {
     width: 100%;
     height: 100px;
-    position: fixed;
     z-index: 100;
     transition: all .3s ease;
-    .navbar-brand{
-        img{
-            display: none;
-        }
-    }
+    position: relative;
 
     #main-nav {
         background-color: transparent !important;
@@ -35,19 +30,63 @@
                     &:after {
                         display: none;
                     }
-                    &:hover{
+
+                    &:hover {
+                        color: $primary;
+                    }
+                }
+
+                &.current-menu-item {
+                    a {
                         color: $primary;
                     }
                 }
             }
         }
     }
-    &.scrolled{
+
+    &.scrolled {
+        position: fixed;
         background-color: rgba($white, 0.8);
         height: 60px;
-        .navbar-brand{
-            img{
+        animation: slidein .3s forwards;
+
+        @keyframes slidein {
+            from {
+                transform: translateY(-80px);
+            }
+
+            to {
+                transform: translateY(0%);
+            }
+        }
+
+        .navbar-brand {
+            img {
                 display: block;
+            }
+        }
+    }
+}
+
+.home {
+    #wrapper-navbar {
+        position: fixed;
+
+        .navbar-brand {
+            img {
+                display: none;
+            }
+        }
+
+        &.scrolled {
+            background-color: rgba($white, 0.8);
+            height: 60px;
+
+            .navbar-brand {
+                img {
+                    display: block;
+                }
             }
         }
     }

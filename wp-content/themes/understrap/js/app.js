@@ -111,15 +111,12 @@ jQuery(document).ready(function($) {
         });
     }
 
-    // $('.datepicker-here').flatpickr({
-    //     'locale': 'de',
-    // });
 
     $('.owl-carousel').owlCarousel({
         loop: true,
         margin: 10,
         nav: true,
-        navText: ["<span class='nav-button'><i class='fa fa-angle-left'></i> </span>","<span class='nav-button next'><i class='fa fa-angle-right'></i> </span>"],
+        navText: ["<span class='nav-button'><i class='fa fa-angle-left'></i> </span>", "<span class='nav-button next'><i class='fa fa-angle-right'></i> </span>"],
         responsive: {
             0: {
                 items: 1
@@ -133,11 +130,11 @@ jQuery(document).ready(function($) {
         }
     })
 
-    $('.collapse').on('shown.bs.collapse', function () {
+    $('.collapse').on('shown.bs.collapse', function() {
         $(this).prev().addClass('active-acc');
     });
 
-    $('.collapse').on('hidden.bs.collapse', function () {
+    $('.collapse').on('hidden.bs.collapse', function() {
         $(this).prev().removeClass('active-acc');
     });
 
