@@ -1,0 +1,79 @@
+.page-template-contact-page {
+.wpcf7{
+	max-width: 100%;
+	padding: 0 1em;
+	@include media-breakpoint-down (md){
+		padding: 1em 0;
+	}
+	.wpcf7-validation-errors{
+		background: transparent;
+		padding: 0;
+		margin: 0;
+		border: 0;
+	} 
+}
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+
+        .heading {
+            color: $black;
+
+            h4 {
+
+                font-size: 1.25rem;
+                text-transform: uppercase;
+            }
+
+            margin-bottom: 1em;
+        }
+
+        .personal-data {
+            display: flex;
+
+            span {
+                flex: 0 1 50%;
+
+                &:not(:last-of-type) {
+                    margin-right: 1em;
+
+                }
+
+            }
+
+            margin-bottom: 1em;
+        }
+
+        input,
+        textarea {
+            border: 0;
+            outline: none;
+            box-shadow: none;
+            border-radius: 0;
+            font-size: 14px;
+            padding: 24px;
+            resize: none;
+        }
+        input[type="submit"]{
+        	width: auto;
+        	height: auto;
+        	float: right;
+        	margin-top: 2em;
+        	border: 2px solid $primary;
+        	font-weight: 600;
+        	text-transform: uppercase;
+        	color: $black;
+        	padding: 10px 15px;
+        	font-size: 12px;
+        	letter-spacing: 1px;
+        	border-radius: 4px;
+        	&:hover,
+        	&:active,
+        	&:focus{
+        		color: $white;
+
+        	}
+
+        }
+    }
+}
