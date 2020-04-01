@@ -13,7 +13,7 @@
     }
 
     .custom-tab {
-        .nav {
+        .nav-tabs {
             border: 0;
 
             .nav-item {
@@ -26,6 +26,12 @@
                 padding: 26px;
                 transition: all .3s ease;
 
+                @include media-breakpoint-down(md) {
+                	width: 100%;
+                	text-align: left;
+                }
+
+
                 &.active {
                     background: $whisper;
                     color: $primary;
@@ -36,12 +42,19 @@
                     color: $primary;
                     text-decoration: underline;
                 }
+
+
+
             }
         }
 
         .tab-pane {
-            padding: 3em 2em;
             background: $whisper;
+            padding: 3em 2em;
+               @include media-breakpoint-down(md) {
+                	 padding: 1.5em 0;
+                }
+
         }
     }
 }
