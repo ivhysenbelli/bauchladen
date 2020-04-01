@@ -1,0 +1,47 @@
+.page-template-about-us-page {
+    .page-title {
+        h2 {
+            color: $black;
+            font-size: 2rem;
+        }
+
+        margin-bottom: 45px;
+    }
+
+    .row {
+        margin-bottom: 45px;
+    }
+
+    .custom-tab {
+        .nav {
+            border: 0;
+
+            .nav-item {
+                background: transparent;
+                width: calc(100%/3);
+                border: 0;
+                color: $primary;
+                text-align: center;
+                font-size: 1rem;
+                padding: 26px;
+                transition: all .3s ease;
+
+                &.active {
+                    background: $whisper;
+                    color: $primary;
+                    text-decoration: underline;
+                }
+
+                &:hover {
+                    color: $primary;
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .tab-pane {
+            padding: 3em 2em;
+            background: $whisper;
+        }
+    }
+}

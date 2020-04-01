@@ -13,12 +13,6 @@ defined( 'ABSPATH' ) || exit;
 get_header();
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
-
-<?php if ( is_front_page() ) : ?>
-  <?php get_template_part( 'global-templates/hero' ); ?>
-<?php endif; ?>
-
-
 <div class="wrapper" id="full-width-page-wrapper">
 
 	<div class="<?php echo esc_attr( $container ); ?>" id="content">
@@ -27,22 +21,47 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 			<div class="col-md-12 content-area" id="primary">
 
-				<main class="site-main" id="main" role="main">
+				<div class="page-title">
+					<h2><?php the_field('page_title'); ?></h2>
+				</div>
 
-					<?php while ( have_posts() ) : the_post(); ?>
+				<div class="row">
+					<div class="col-md-6">
+						<?php $firstImage = get_field('image_a'); ?>
+						<img src="<?php echo $firstImage['url']; ?>" alt="">
+					</div>
+					<div class="col-md-6">
+						<?php $secondImage = get_field('image_b'); ?>
+						<img src="<?php echo $secondImage['url']; ?>" alt="">
+					</div>
+				</div>
 
-						<?php get_template_part( 'loop-templates/content', 'page' ); ?>
+				<div class="row">
+					<div class="col-12">
+				<div class="custom-tab">
+					  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+					  	<?php $flag = true ?>
+					  	<?php while(have_rows('tabs')): the_row(); ?>
+					  	<?php $tabTitle = strtolower(str_replace(" ", "-", get_sub_field('tab_title'))) ?>
+					    <a class="nav-item nav-link <?php if($flag == true) {echo "active";} ?>" id="nav-<?= $tabTitle ?>-tab" data-toggle="tab" href="#nav-<?= $tabTitle ?>" role="tab" aria-controls="nav-<?= $tabTitle ?>" aria-selected="true"><?php the_sub_field('tab_title'); ?></a>
+					    <?php $flag = false; ?>
+					    	<?php endwhile; ?>
+					  </div>
+						<div class="tab-content" id="nav-tabContent">
+							<?php $flag2 = true ?>
+							<?php while(have_rows('tabs')): the_row(); ?>
+							<?php $tabTitle2 = strtolower(str_replace(" ", "-", get_sub_field('tab_title'))); ?>
 
-						<?php
-						// If comments are open or we have at least one comment, load up the comment template.
-						if ( comments_open() || get_comments_number() ) :
-							comments_template();
-						endif;
-						?>
-
-					<?php endwhile; // end of the loop. ?>
-
-				</main><!-- #main -->
+						  <div class="tab-pane fade <?php if($flag2 == true) {echo "show active";} ?>" id="nav-<?= $tabTitle2 ?>" role="tabpanel" aria-labelledby="nav-<?= $tabTitle2 ?>-tab">
+						  	<?php the_sub_field('editor'); ?>
+						  </div>
+						  <?php $flag2 = false ?>
+						  <?php endwhile; ?>
+						</div>
+					
+						</div>						
+					</div>
+				</div>
 
 			</div><!-- #primary -->
 
