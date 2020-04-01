@@ -1,4 +1,10 @@
 .section-termine {
+    overflow: hidden;
+
+    @include media-breakpoint-down(md) {
+        padding: 0;
+    }
+
     .title {
         text-align: center;
         margin: 0 auto 3em;
@@ -67,7 +73,20 @@
             }
 
             td {
-                font-weight: 400;
+                font-weight: 300;
+                line-height: 28px;
+            }
+        }
+
+        @include media-breakpoint-down (md) {
+            width: 100%;
+            text-align: left !important;
+            display: block;
+            overflow-x: scroll;
+            white-space: nowrap;
+
+            td {
+                padding-right: 10px;
             }
         }
     }
@@ -171,6 +190,15 @@
 
         .wpcf7 {
             max-width: 100%;
+
+            .wpcf7-validation-errors {
+                background: transparent;
+            }
+
+            input[type=date] {
+                font-weight: 300;
+                padding: 24px 20px;
+            }
         }
 
         &.hidden {
@@ -178,6 +206,7 @@
             transition: all .750s ease;
             overflow: hidden;
             max-height: 0;
+            
         }
 
         h4 {
@@ -259,6 +288,11 @@
                 display: flex;
                 flex: 0 1 50%;
                 padding-right: 15px;
+                align-items: center;
+
+                br {
+                    display: none;
+                }
 
                 span {
                     width: 160px;
@@ -283,14 +317,44 @@
                 }
             }
 
+            input {
+                border-radius: 0;
+                font-size: 12px;
+                padding: 24px;
+                color: $zambezi;
+                box-shadow: none;
+                border: 0;
+                outline: none;
+
+                @include placeholder {
+                    color: rgba($zambezi, 0.5);
+                }
+            }
+
+            textarea {
+                resize: none;
+                border: 0;
+                border-radius: 0;
+                outline: none;
+            }
+
             .form-contact .wpcf7-submit {
                 float: right;
-                border-color: #c45555;
+                border-color: $primary;
+                border: 2px solid $primary;
+                width: fit-content;
+                padding: 1.25em 1.75em;
+                height: 100%;
+                font-size: 10px;
+                border-radius: 4px;
+                text-transform: uppercase;
+                font-weight: 800;
+                letter-spacing: 2px;
 
                 &:hover {
-                    border-color: #c45555;
-                    background-color: #c45555;
-                    color: #FFFFFF;
+                    border-color: $primary;
+                    background-color: $primary;
+                    color: $white;
                 }
             }
         }
@@ -407,12 +471,12 @@
         height: 13.5px;
         width: 13.5px;
         background-color: #eee;
-        border: 1.25px solid #c45555;
+        border: 1.25px solid $primary;
     }
 
     @media only screen and (max-width: 768.99px) {
         .checkmark {
-            background-color: #FFFFFF;
+            background-color: $white;
         }
     }
 
@@ -424,13 +488,13 @@
         }
 
         input:checked~.checkmark {
-            background-color: #c45555;
+            background-color: $primary;
         }
     }
 
     @media only screen and (max-width: 768.99px) {
         .check-container:hover input~.checkmark {
-            background-color: #fff;
+            background-color: $white;
         }
     }
 

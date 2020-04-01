@@ -49,9 +49,9 @@ jQuery(document).ready(function($) {
     $('.btn-toggle').on('click', function(e) {
         $('.custom-contact-form').toggleClass("hidden");
         if (!$('.custom-contact-form').hasClass('hidden')) {
-            $('.btn-toggle').text("Schließen").addClass('close');
+            $('.btn-toggle').text("Schließen").addClass('close-custom-btn');
         } else {
-            $('.btn-toggle').text("Anfragen").removeClass('close');
+            $('.btn-toggle').text("Anfragen").removeClass('close-custom-btn');
         }
     });
 
@@ -103,7 +103,7 @@ jQuery(document).ready(function($) {
         });
 
         $('.footer-hook-col .btn-toggle').click(function() {
-            if (($(this).hasClass('close'))) {
+            if (($(this).hasClass('close-custom-btn'))) {
                 $('html, body').animate({
                     scrollTop: $(".anfragen-form").offset().top
                 }, 800);

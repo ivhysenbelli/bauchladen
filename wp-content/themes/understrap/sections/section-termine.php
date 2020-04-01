@@ -23,7 +23,7 @@ $posts = get_posts($args);
 			      </div>
 		  	</div>
 
-		  	<div class="col-12">
+		  	<div class="col-12 d-none d-lg-block">
 		  		<nav>
 				  <div class="nav nav-tabs" id="nav-tab" role="tablist">
 				    <?php $flag = 0; ?>
@@ -89,6 +89,32 @@ $posts = get_posts($args);
 					<?php endforeach; ?>
 				</div>
 		  	</div>
+		  	<div class="col-12 d-md-block d-lg-none">
+		  		<div class="accordion" id="accordion-events">
+		  			<?php $flag3 = true; ?>
+		  			<?php foreach ($posts as $post ): ?>
+					  <div class="card">
+					    <div class="card-header" id="heading-collapse-<?= $post->ID ?>">
+					      <h3 class="mb-0">
+					        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse-<?= $post->ID ?>" aria-expanded="true" aria-controls="collapse-<?= $post->ID ?>">
+					          <?php echo $post->post_title ?>
+					        </button>
+					      </h3>
+					    </div>
+
+					    <div id="collapse-<?= $post->ID ?>" class="collapse <?php if($flag == true){ echo "show";} ?>" aria-labelledby="heading-collapse-<?= $post->ID ?>" data-parent="#accordion-events">
+					      <div class="card-body">
+					        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+					      </div>
+					    </div>
+					  </div>
+					<?php $flag = false; ?>
+		  			<?php endforeach; ?>
+
+
+
+					</div>
+		  	</div>
 
   		</div>
   	</div>
@@ -98,6 +124,7 @@ $posts = get_posts($args);
 	  				<div class="custom-contact-form hidden">
 						<?php 
 							$contactFormID = get_field('contact_form_id','options');
+
 							$contactFormName = get_field('contact_form_name','options');
 
 							echo do_shortcode( '[contact-form-7 id="'.$contactFormID.'" title="'.$contactFormName.'"]' );
