@@ -1,419 +1,468 @@
 .section-termine {
-	.title {
-		text-align: center;
-		margin: 0 auto 3em;
-		color: $black;
+    .title {
+        text-align: center;
+        margin: 0 auto 3em;
+        color: $black;
 
-		h2 {
-			font-weight: 500;
-			font-size: 47px;
-		}
+        h2 {
+            font-weight: 500;
+            font-size: 47px;
+        }
 
-		&:after {
-			content: '';
-			display: block;
-			height: 2px;
-			width: 70px;
-			background-color: $primary;
-			margin: 0 auto;
-		}
-	}
-
-	.custom-table {
-  width: 100%;
-  margin-bottom: 3em;
-
-  tr {
-    th {
-      font-weight: bold;
+        &:after {
+            content: '';
+            display: block;
+            height: 2px;
+            width: 70px;
+            background-color: $primary;
+            margin: 0 auto;
+        }
     }
 
-    td {
-      font-weight: 400;
-    }
-  }
-}
+    .nav-tabs {
+        display: table;
+        width: 100%;
+        text-align: center;
+        border: none;
 
-.custom-table-row .check-kurs {
-  max-width: 60px;
-  min-width: 60px;
-}
+        .nav-link {
+            display: table-cell;
+            font-weight: 500;
+            border-radius: 0;
+            padding: 1em;
+            border: none;
+            color: $zambezi;
+            transition: all .3s ease;
 
-.details-row {
-  padding: 3em 2em;
-  display: flex;
-  align-items: center;
-  background-color: #c45555;
-  color: #FFF;
 
-  .single-col {
-    flex: 0 1 75%;
-    color: #FFFFFF;
-  }
+            &.active {
+                background-color: $whisper;
+                color: $primary;
+                border: 0;
+                border-radius: 0;
+                text-decoration: underline;
+            }
 
-  .button-col {
-    float: right;
-    flex: 0 1 25%;
-    text-align: right;
-  }
+            &:hover {
+                border: 0;
+                border-radius: 0;
+                text-decoration: underline;
 
-  &.details-footer {
-    display: none;
-
-    &.show {
-      position: fixed;
-      z-index: 99999;
-      bottom: 0;
-      width: 88%;
-      left: 0;
-      display: flex;
-    }
-  }
-
-  p {
-    color: #FFFFFF;
-  }
-
-  span {
-    color: #FFFFFF;
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 10px;
-    line-height: 39px;
-    padding: 23px;
-    border: 2px solid #FFFFFF;
-    border-radius: 4px;
-    letter-spacing: 1px;
-    transition: all .3s ease;
-    cursor: pointer;
-
-    &:hover {
-      color: #c45555;
-      background: #FFFFFF;
-    }
-  }
-}
-
-@media only screen and (max-width: 568.99px) {
-  .details-row {
-    padding: 2em;
-    flex-direction: column-reverse;
-  }
-}
-
-@media only screen and (max-width: 568.99px) {
-  .details-row .single-col {
-    flex: 0 1 100%;
-    color: #FFFFFF;
-
-    &:first-of-type {
-      margin-top: 2.5em;
+            }
+        }
     }
 
-    &.footer-hook-col {
-      margin-top: 0;
-      flex: 0 1 100%;
-    }
-  }
-}
-
-@media only screen and (max-width: 568.99px) {
-  .details-row .button-col {
-    margin-top: 1em;
-  }
-}
-
-.custom-contact-form {
-  background: #eeeeee;
-  margin-top: 2em;
-  padding-bottom: 1em;
-  transition: all .750s ease;
-  max-height: 2000px;
-  overflow: hidden;
-  .wpcf7{
-  	max-width: 100%;
-  }
-
-  &.hidden {
-    margin-top: 0;
-    transition: all .750s ease;
-    overflow: hidden;
-    max-height: 0;
-  }
-
-  h4 {
-    margin-bottom: 10px;
-  }
-
-  .anfragen-form {
-    padding: 4em;
-
-    .hidden {
-      display: none;
-    }
-  }
-
-  .form-header {
-    margin-bottom: 2em;
-  }
-
-  .kurse-row {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 2em;
-
-    .col-title {
-      flex: 0 1 7.5%;
+    .tab-content {
+        background-color: $whisper;
+        padding: 2em;
     }
 
-    .col-list {
-      flex: 0 1 80%;
+    .custom-table {
+        width: 100%;
+        margin-bottom: 3em;
+
+        tr {
+            th {
+                font-weight: bold;
+            }
+
+            td {
+                font-weight: 400;
+            }
+        }
     }
 
-    .single-col ul {
-      list-style: none;
-      display: flex;
-      align-items: flex-start;
-      flex-direction: column;
-
-      li {
-        font-weight: 600;
-        margin-bottom: 10px;
-      }
-    }
-  }
-
-  .anfragen-form {
-    p {
-      margin: 0 !important;
+    .custom-table-row .check-kurs {
+        max-width: 60px;
+        min-width: 60px;
     }
 
-    .personal-information, .birth-information, .more-information {
-      margin-bottom: 50px;
-    }
-
-    .birth-information {
-      display: flex;
-    }
-
-    .personal-information {
-      .personal-data, .additional-info, .contact-details {
+    .details-row {
+        padding: 3em 2em;
         display: flex;
-        margin-bottom: 10px;
-      }
+        align-items: center;
+        background-color: #c45555;
+        color: #FFF;
 
-      .personal-data span, .additional-info span, .contact-details span {
-        position: relative;
-        flex: 0 1 50%;
-        margin-right: 15px;
-      }
-    }
+        .single-col {
+            flex: 0 1 75%;
+            color: #FFFFFF;
+        }
 
-    .birth-information label {
-      display: flex;
-      flex: 0 1 50%;
-      padding-right: 15px;
+        .button-col {
+            float: right;
+            flex: 0 1 25%;
+            text-align: right;
+        }
 
-      span {
-        width: 160px;
-        margin-left: auto;
-      }
-    }
+        &.details-footer {
+            display: none;
 
-    .partner-info {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 30px;
+            &.show {
+                position: fixed;
+                z-index: 99999;
+                bottom: 0;
+                width: 88%;
+                left: 0;
+                display: flex;
+            }
+        }
 
-      p {
-        display: flex;
-        flex: 0 1 50%;
+        p {
+            color: #FFFFFF;
+        }
 
         span {
-          display: flex;
-          flex: 0 1 50%;
-          margin-right: 10px;
+            color: #FFFFFF;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 10px;
+            line-height: 39px;
+            padding: 23px;
+            border: 2px solid #FFFFFF;
+            border-radius: 4px;
+            letter-spacing: 1px;
+            transition: all .3s ease;
+            cursor: pointer;
+
+            &:hover {
+                color: #c45555;
+                background: #FFFFFF;
+            }
         }
-      }
     }
 
-    .form-contact .wpcf7-submit {
-      float: right;
-      border-color: #c45555;
-
-      &:hover {
-        border-color: #c45555;
-        background-color: #c45555;
-        color: #FFFFFF;
-      }
+    @media only screen and (max-width: 568.99px) {
+        .details-row {
+            padding: 2em;
+            flex-direction: column-reverse;
+        }
     }
-  }
-}
 
-@media only screen and (max-width: 1200px) {
-  .custom-contact-form.hidden {
-    padding: 0;
-  }
-}
+    @media only screen and (max-width: 568.99px) {
+        .details-row .single-col {
+            flex: 0 1 100%;
+            color: #FFFFFF;
 
-@media only screen and (max-width: 768.99px) {
-  .custom-contact-form .anfragen-form {
-    padding: 2em;
-  }
-}
+            &:first-of-type {
+                margin-top: 2.5em;
+            }
 
-@media only screen and (max-width: 991.99px) {
-  .custom-contact-form .kurse-row {
-    flex-direction: column;
-  }
-}
-
-@media only screen and (max-width: 568.99px) {
-  .custom-contact-form .kurse-row .single-col {
-    flex: 0 1 100%;
-  }
-}
-
-@media only screen and (max-width: 568.99px) {
-  .custom-contact-form .anfragen-form .birth-information {
-    flex-direction: column;
-    margin-bottom: 1.5em;
-
-    br {
-      display: none;
+            &.footer-hook-col {
+                margin-top: 0;
+                flex: 0 1 100%;
+            }
+        }
     }
-  }
-}
 
-@media only screen and (max-width: 568.99px) {
-  .custom-contact-form .anfragen-form .personal-information {
-    .personal-data, .additional-info, .contact-details {
-      flex-direction: column;
+    @media only screen and (max-width: 568.99px) {
+        .details-row .button-col {
+            margin-top: 1em;
+        }
     }
-  }
-}
 
-@media only screen and (max-width: 768.99px) {
-  .custom-contact-form .anfragen-form .birth-information label {
-    display: flex;
-    width: 97%;
-  }
-}
+    .custom-contact-form {
+        background: #eeeeee;
+        margin-top: 2em;
+        padding-bottom: 1em;
+        transition: all .750s ease;
+        max-height: 2000px;
+        overflow: hidden;
 
-@media only screen and (max-width: 568.99px) {
-  .custom-contact-form .anfragen-form .birth-information label {
-    display: flex;
-    flex-direction: column;
-  }
-}
+        .wpcf7 {
+            max-width: 100%;
+        }
 
-@media only screen and (max-width: 568.99px) {
-  .custom-contact-form .anfragen-form .birth-information label span {
-    width: 97%;
-    margin-right: auto;
-    margin-left: 0;
-  }
-}
+        &.hidden {
+            margin-top: 0;
+            transition: all .750s ease;
+            overflow: hidden;
+            max-height: 0;
+        }
 
-@media only screen and (max-width: 568.99px) {
-  .custom-contact-form .anfragen-form .partner-info p {
-    flex-direction: column;
-  }
-}
+        h4 {
+            margin-bottom: 10px;
+        }
 
-/* The container */
+        .anfragen-form {
+            padding: 4em;
 
-.check-container {
-  display: block;
-  position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 22px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+            .hidden {
+                display: none;
+            }
+        }
 
-  input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 13.5px;
-    width: 13.5px;
-    top: 0;
-    left: 0;
-    z-index: 1;
-  }
-}
+        .form-header {
+            margin-bottom: 2em;
+        }
 
-/* Hide the browser's default checkbox */
+        .kurse-row {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 2em;
 
-/* Create a custom checkbox */
+            .col-title {
+                flex: 0 1 7.5%;
+            }
 
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 13.5px;
-  width: 13.5px;
-  background-color: #eee;
-  border: 1.25px solid #c45555;
-}
+            .col-list {
+                flex: 0 1 80%;
+            }
 
-@media only screen and (max-width: 768.99px) {
-  .checkmark {
-    background-color: #FFFFFF;
-  }
-}
+            .single-col ul {
+                list-style: none;
+                display: flex;
+                align-items: flex-start;
+                flex-direction: column;
 
-/* On mouse-over, add a grey background color */
+                li {
+                    font-weight: 600;
+                    margin-bottom: 10px;
+                }
+            }
+        }
 
-.check-container {
-  &:hover input ~ .checkmark {
-    background-color: #ccc;
-  }
+        .anfragen-form {
+            p {
+                margin: 0 !important;
+            }
 
-  input:checked ~ .checkmark {
-    background-color: #c45555;
-  }
-}
+            .personal-information,
+            .birth-information,
+            .more-information {
+                margin-bottom: 50px;
+            }
 
-@media only screen and (max-width: 768.99px) {
-  .check-container:hover input ~ .checkmark {
-    background-color: #fff;
-  }
-}
+            .birth-information {
+                display: flex;
+            }
 
-/* When the checkbox is checked, add a blue background */
+            .personal-information {
 
-/* Create the checkmark/indicator (hidden when not checked) */
+                .personal-data,
+                .additional-info,
+                .contact-details {
+                    display: flex;
+                    margin-bottom: 10px;
+                }
 
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
+                .personal-data span,
+                .additional-info span,
+                .contact-details span {
+                    position: relative;
+                    flex: 0 1 50%;
+                    margin-right: 15px;
+                }
+            }
 
-/* Show the checkmark when checked */
+            .birth-information label {
+                display: flex;
+                flex: 0 1 50%;
+                padding-right: 15px;
 
-.check-container {
-  input:checked ~ .checkmark:after {
-    display: block;
-  }
+                span {
+                    width: 160px;
+                    margin-left: auto;
+                }
+            }
 
-  .checkmark:after {
-    left: 3.5px;
-    top: -1px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 2px 2px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-  }
-}
+            .partner-info {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 30px;
 
-/* Style the checkmark/indicator */
+                p {
+                    display: flex;
+                    flex: 0 1 50%;
+
+                    span {
+                        display: flex;
+                        flex: 0 1 50%;
+                        margin-right: 10px;
+                    }
+                }
+            }
+
+            .form-contact .wpcf7-submit {
+                float: right;
+                border-color: #c45555;
+
+                &:hover {
+                    border-color: #c45555;
+                    background-color: #c45555;
+                    color: #FFFFFF;
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 1200px) {
+        .custom-contact-form.hidden {
+            padding: 0;
+        }
+    }
+
+    @media only screen and (max-width: 768.99px) {
+        .custom-contact-form .anfragen-form {
+            padding: 2em;
+        }
+    }
+
+    @media only screen and (max-width: 991.99px) {
+        .custom-contact-form .kurse-row {
+            flex-direction: column;
+        }
+    }
+
+    @media only screen and (max-width: 568.99px) {
+        .custom-contact-form .kurse-row .single-col {
+            flex: 0 1 100%;
+        }
+    }
+
+    @media only screen and (max-width: 568.99px) {
+        .custom-contact-form .anfragen-form .birth-information {
+            flex-direction: column;
+            margin-bottom: 1.5em;
+
+            br {
+                display: none;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 568.99px) {
+        .custom-contact-form .anfragen-form .personal-information {
+
+            .personal-data,
+            .additional-info,
+            .contact-details {
+                flex-direction: column;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 768.99px) {
+        .custom-contact-form .anfragen-form .birth-information label {
+            display: flex;
+            width: 97%;
+        }
+    }
+
+    @media only screen and (max-width: 568.99px) {
+        .custom-contact-form .anfragen-form .birth-information label {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    @media only screen and (max-width: 568.99px) {
+        .custom-contact-form .anfragen-form .birth-information label span {
+            width: 97%;
+            margin-right: auto;
+            margin-left: 0;
+        }
+    }
+
+    @media only screen and (max-width: 568.99px) {
+        .custom-contact-form .anfragen-form .partner-info p {
+            flex-direction: column;
+        }
+    }
+
+    /* The container */
+
+    .check-container {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 22px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 13.5px;
+            width: 13.5px;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+    }
+
+    /* Hide the browser's default checkbox */
+
+    /* Create a custom checkbox */
+
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 13.5px;
+        width: 13.5px;
+        background-color: #eee;
+        border: 1.25px solid #c45555;
+    }
+
+    @media only screen and (max-width: 768.99px) {
+        .checkmark {
+            background-color: #FFFFFF;
+        }
+    }
+
+    /* On mouse-over, add a grey background color */
+
+    .check-container {
+        &:hover input~.checkmark {
+            background-color: #ccc;
+        }
+
+        input:checked~.checkmark {
+            background-color: #c45555;
+        }
+    }
+
+    @media only screen and (max-width: 768.99px) {
+        .check-container:hover input~.checkmark {
+            background-color: #fff;
+        }
+    }
+
+    /* When the checkbox is checked, add a blue background */
+
+    /* Create the checkmark/indicator (hidden when not checked) */
+
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    /* Show the checkmark when checked */
+
+    .check-container {
+        input:checked~.checkmark:after {
+            display: block;
+        }
+
+        .checkmark:after {
+            left: 3.5px;
+            top: -1px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+    }
+
+    /* Style the checkmark/indicator */
 }

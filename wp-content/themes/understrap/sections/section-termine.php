@@ -22,12 +22,13 @@ $posts = get_posts($args);
 			        <?php endif; ?>
 			      </div>
 		  	</div>
+
 		  	<div class="col-12">
 		  		<nav>
 				  <div class="nav nav-tabs" id="nav-tab" role="tablist">
 				    <?php $flag = 0; ?>
 					<?php foreach ($posts as $post ): ?>
-						<a class="nav-item nav-link" id="nav-<?= $post->ID ?>-tab" data-toggle="tab" href="#nav-<?= $post->ID ?>" role="tab" aria-controls="nav-<?= $post->ID ?>" aria-selected="false"><?= $post->post_title; ?></a>
+						<a class="nav-item nav-link <?php if ($flag == 0){ echo "show active"; } ?>"" id="nav-<?= $post->ID ?>-tab" data-toggle="tab" href="#nav-<?= $post->ID ?>" role="tab" aria-controls="nav-<?= $post->ID ?>" aria-selected="false"><?= $post->post_title; ?></a>
 						<?php $flag = 1; ?>
 					<?php endforeach; ?>
 				  </div>
@@ -88,32 +89,37 @@ $posts = get_posts($args);
 					<?php endforeach; ?>
 				</div>
 		  	</div>
-  		</div>
-  		<div class="row">
-  			<div class="col-12">
-  				<div class="custom-contact-form hidden">
-					<?php 
-						$contactFormID = get_field('contact_form_id','options');
-						$contactFormName = get_field('contact_form_name','options');
 
-						echo do_shortcode( '[contact-form-7 id="'.$contactFormID.'" title="'.$contactFormName.'"]' );
-					?>
-				</div>
-  			</div>
   		</div>
-  		<div class="row">
+  	</div>
+  		<div class="container">
+	  		<div class="row">
+	  			<div class="col-12">
+	  				<div class="custom-contact-form hidden">
+						<?php 
+							$contactFormID = get_field('contact_form_id','options');
+							$contactFormName = get_field('contact_form_name','options');
+
+							echo do_shortcode( '[contact-form-7 id="'.$contactFormID.'" title="'.$contactFormName.'"]' );
+						?>
+					</div>
+				</div>
+	  			</div>
+	  		</div>
+  			<div class="row">
   			<div class="col-12">
   				<div class="details-row main-details">
-				<div class="single-col descripton-col">
-					<p class="description">
-						<?php wpautop(the_field('description','options')); ?>
-					</p>
+					<div class="single-col descripton-col">
+						<p class="description">
+							<?php wpautop(the_field('description','options')); ?>
+						</p>
+						</div>
+					<div class="single-col button-col">
+						<span class="btn-toggle"> <?php the_field('button_title','options') ?> </span> 
+					</div>
 				</div>
-				<div class="single-col button-col">
-					<span class="btn-toggle"> <?php the_field('button_title','options') ?> </span> 
-				</div>
-			</div>
   			</div>
+  		</div>
   		</div>
 </section>
 <?php wp_reset_postdata(); ?>
