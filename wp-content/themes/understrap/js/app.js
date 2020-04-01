@@ -10,7 +10,7 @@ jQuery(document).ready(function($) {
         }
     });
 
-    
+
     $(".custom-checkbox").click(function(event) {
         if (this.checked) {
 
@@ -111,27 +111,33 @@ jQuery(document).ready(function($) {
         });
     }
 
-    $('.datepicker-here').flatpickr({
-    	'locale': 'de',
-    });
+    // $('.datepicker-here').flatpickr({
+    //     'locale': 'de',
+    // });
 
     $('.owl-carousel').owlCarousel({
-    loop:true,
-    margin:10,
-    nav:true,
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:3
-        },
-        1000:{
-            items:5
+        loop: true,
+        margin: 10,
+        nav: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 5
+            }
         }
-    }
-})
+    })
 
+    $('.collapse').on('shown.bs.collapse', function () {
+        $(this).prev().addClass('active-acc');
+    });
 
+    $('.collapse').on('hidden.bs.collapse', function () {
+        $(this).prev().removeClass('active-acc');
+    });
 
 });

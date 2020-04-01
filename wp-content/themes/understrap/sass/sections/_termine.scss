@@ -63,6 +63,58 @@
         padding: 2em;
     }
 
+    .custom-accordion {
+        margin-bottom: 1em;
+
+        .card {
+            border: 0;
+        }
+
+        .card-header {
+            background: none;
+            border: 0;
+            border-bottom: 2px solid $primary;
+
+            h3 {
+                position: relative;
+
+                button {
+                    width: 100%;
+                    text-align: left;
+                    z-index: 5;
+                    position: relative;
+                }
+
+                &:after {
+                    content: '+';
+                    font-family: "FontAwesome";
+                    position: absolute;
+                    right: 5%;
+                    top: 25%;
+                    color: $primary;
+                    font-size: 1rem;
+                    z-index: 1;
+                    transition: all .3s ease;
+
+                }
+            }
+
+            &.active-acc {
+                h3 {
+                    &:after {
+                        content: "-";
+                    }
+                }
+            }
+        }
+
+        button {
+            font-weight: 600;
+            color: $primary;
+            font-size: 17px;
+        }
+    }
+
     .custom-table {
         width: 100%;
         margin-bottom: 3em;
@@ -206,11 +258,14 @@
             transition: all .750s ease;
             overflow: hidden;
             max-height: 0;
-            
+
         }
 
         h4 {
             margin-bottom: 10px;
+            font-size: 1rem;
+            font-weight: 500;
+            color: $black;
         }
 
         .anfragen-form {
@@ -281,6 +336,10 @@
                     position: relative;
                     flex: 0 1 50%;
                     margin-right: 15px;
+
+                    @include media-breakpoint-down (md) {
+                        margin-bottom: 15px;
+                    }
                 }
             }
 
@@ -290,6 +349,10 @@
                 padding-right: 15px;
                 align-items: center;
 
+                @include media-breakpoint-down (md) {
+                    align-items: flex-start;
+                }
+
                 br {
                     display: none;
                 }
@@ -297,6 +360,10 @@
                 span {
                     width: 160px;
                     margin-left: auto;
+
+                    @include media-breakpoint-down (md) {
+                        margin-bottom: 5px;
+                    }
                 }
             }
 
@@ -313,6 +380,10 @@
                         display: flex;
                         flex: 0 1 50%;
                         margin-right: 10px;
+
+                        @include media-breakpoint-down (md) {
+                            margin-bottom: 15px;
+                        }
                     }
                 }
             }
@@ -492,13 +563,6 @@
         }
     }
 
-    @media only screen and (max-width: 768.99px) {
-        .check-container:hover input~.checkmark {
-            background-color: $white;
-        }
-    }
-
-    /* When the checkbox is checked, add a blue background */
 
     /* Create the checkmark/indicator (hidden when not checked) */
 
