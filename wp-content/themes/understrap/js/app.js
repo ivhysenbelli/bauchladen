@@ -119,6 +119,7 @@ jQuery(document).ready(function($) {
         loop: true,
         margin: 10,
         nav: true,
+        navText: ["<span class='nav-button'><i class='fa fa-angle-left'></i> </span>","<span class='nav-button next'><i class='fa fa-angle-right'></i> </span>"],
         responsive: {
             0: {
                 items: 1
@@ -127,7 +128,7 @@ jQuery(document).ready(function($) {
                 items: 3
             },
             1000: {
-                items: 5
+                items: 4
             }
         }
     })
