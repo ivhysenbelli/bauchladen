@@ -8,6 +8,7 @@
             <a href="<?php the_sub_field('video_url') ?>" rel="prettyPhoto" >
               <?php $img = get_sub_field('video_thumbnail'); ?>
               <img src="<?php echo $img['url']; ?>" alt="">
+              <span class="video-button"></span>
             </a>
           </div>
         <?php endwhile; ?>

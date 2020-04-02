@@ -1,15 +1,60 @@
 .section-videos {
-	min-height: auto;
+    min-height: auto;
 
-	.single-col {
-		.title {
-			font-size: 17px;
-			font-weight: 600;
-			margin-bottom: .25em;
-		}
+    .single-col {
+        position: relative;
 
-		@include media-breakpoint-down (md) {
-			margin-bottom: 1.5em;
-		}
-	}
+        img {
+            transition: all .3s ease;
+        }
+
+        .title {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: .25em;
+        }
+
+        @include media-breakpoint-down (md) {
+            margin-bottom: 1.5em;
+        }
+
+        .video-button {
+            display: block;
+            height: 100px;
+            width: 100px;
+            top: calc(50% - 50px);
+            left: calc(50% - 50px);
+            border-radius: 50%;
+            background: rgba($white, 0.75);
+            position: absolute;
+            transition: all .3s ease;
+
+
+            &:after {
+                transition: all .3s ease;
+
+                content: "\f04b";
+                font-family: "FontAwesome";
+                font-size: 2rem;
+                position: absolute;
+                top: 27%;
+                left: 40%;
+                color: rgba($zambezi, 0.5);
+            }
+        }
+
+        &:hover {
+            img {
+                opacity: 0.85;
+            }
+
+            .video-button {
+                background: rgba($white, 1);
+
+                &:after {
+                    color: $primary;
+                }
+            }
+        }
+    }
 }
