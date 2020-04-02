@@ -34,15 +34,15 @@ if ( post_password_required() ) {
 			if ( 1 === (int) $comments_number ) {
 				printf(
 					/* translators: %s: post title */
-					esc_html_x( 'One thought on &ldquo;%s&rdquo;', 'comments title', 'understrap' ),
+					esc_html_x( '1 Komment', 'comments title', 'understrap' ),
 					'<span>' . get_the_title() . '</span>'
 				);
 			} else {
 				printf( // WPCS: XSS OK.
 					/* translators: 1: number of comments, 2: post title */
 					esc_html( _nx(
-						'%1$s thought on &ldquo;%2$s&rdquo;',
-						'%1$s thoughts on &ldquo;%2$s&rdquo;',
+						'%1$s kommentare',
+						'%1$s kommentaren',
 						$comments_number,
 						'comments title',
 						'understrap'
@@ -77,18 +77,21 @@ if ( post_password_required() ) {
 
 		<?php endif; // check for comment navigation. ?>
 
-		<ol class="comment-list">
+		<ul class="comment-list">
 
 			<?php
 			wp_list_comments(
 				array(
-					'style'      => 'ol',
-					'short_ping' => true,
+					'walker' => new Walker_Comment(),
+					'avatar_size' => 60,
+		            'style'       => 'ul',
+		            'short_ping'  => false,
+		            'type'        => 'comment',
 				)
 			);
 			?>
 
-		</ol><!-- .comment-list -->
+		</ul><!-- .comment-list -->
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through. ?>
 
@@ -123,6 +126,10 @@ if ( post_password_required() ) {
 
 	<?php endif; ?>
 
-	<?php comment_form(); // Render comments form. ?>
+	<?php comment_form(
+				array(
+					'label_submit' => __('senden'),
+				)
+	); // Render comments form. ?>
 
 </div><!-- #comments -->

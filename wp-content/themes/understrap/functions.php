@@ -62,6 +62,21 @@ function my_acf_json_load_point( $paths ) {
     
 }
 
-	wp_enqueue_style( 'jquery-ui-css-air', 'https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css');
-	wp_enqueue_script('flatpicker-date', 'https://cdn.jsdelivr.net/npm/flatpickr');
-	wp_enqueue_script('flatpickr-date-de', 'https://npmcdn.com/flatpickr/dist/l10n/de.js');
+wp_enqueue_style( 'jquery-ui-css-air', 'https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css');
+wp_enqueue_script('flatpicker-date', 'https://cdn.jsdelivr.net/npm/flatpickr');
+wp_enqueue_script('flatpickr-date-de', 'https://npmcdn.com/flatpickr/dist/l10n/de.js');
+
+add_filter( 'comment_form_defaults', 'remove_title_reply_comments' );
+
+function remove_title_reply_comments( $defaults ) {
+    $defaults['title_reply'] = '';
+    $defaults['comment_notes_before'] = "VERÖFFENTLICHEN SIE EINEN KOMMENTAR";
+    return $defaults;
+}
+
+
+function bs_modified_comment_reply_text( $link ) {
+ $link = str_replace( 'Kommentare', 'Kommentare', $link );
+ return $link;
+ }
+add_filter( 'comment_reply_link', 'bs_modified_comment_reply_text' );
