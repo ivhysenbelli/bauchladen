@@ -1,0 +1,39 @@
+.pp_left,
+.pp_right,
+.pp_middle,
+.pp_top,
+.pp_bottom {
+    padding: 0 !important;
+    display: block;
+    height: 0 !important;
+}
+
+.pp_content {
+    background: transparent !important;
+
+}
+
+.pp_details {
+    .pp_social {
+        display: none;
+    }
+
+    .pp_close {
+        background: none !important;
+
+        &:after {
+            content: "\f00d";
+            font-size: 15px;
+            height: 15px;
+            line-height: 30px;
+            width: 30px;
+            right: 0;
+            color: $white;
+            font-family: FontAwesome, serif;
+            text-align: center;
+            position: absolute;
+            top: 0;
+            text-indent: 0;
+        }
+    }
+}

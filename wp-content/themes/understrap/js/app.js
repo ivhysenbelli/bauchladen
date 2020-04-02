@@ -34,6 +34,22 @@ jQuery(document).ready(function($) {
         }
     });
 
+    $("a[rel^='prettyPhoto']").prettyPhoto({
+        theme: 'dark_square',
+        animation_speed: 'fast',
+        show_title: false,
+        allow_resize: false,
+        horizontal_padding: 1,
+        autoplay: true,
+        modal: false,
+        deeplinking: false,
+        keyboard_shortcuts: true,
+        ie6_fallback: true,
+        default_width: 1140,
+        default_height: 641,
+    });
+
+
     $('.wpcf7-submit').on('click', function(e) {
 
         var satatement = '';
