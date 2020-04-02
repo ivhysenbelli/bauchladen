@@ -38,7 +38,7 @@ jQuery(document).ready(function($) {
         theme: 'dark_square',
         animation_speed: 'fast',
         show_title: false,
-        allow_resize: false,
+        allow_resize: true,
         horizontal_padding: 1,
         autoplay: true,
         modal: false,
