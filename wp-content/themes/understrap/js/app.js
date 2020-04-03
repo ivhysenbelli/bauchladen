@@ -49,7 +49,6 @@ jQuery(document).ready(function($) {
         default_height: 641,
     });
 
-
     $('.wpcf7-submit').on('click', function(e) {
 
         var satatement = '';
