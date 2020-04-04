@@ -202,6 +202,7 @@ if ( ! class_exists( 'Understrap_WP_Bootstrap_Navwalker' ) ) {
 				   // Parent link shows dropdown on hover 
 				   $atts['data-hover'] = 'dropdown';
 				};
+				
 				$atts['aria-haspopup'] = 'true';
 				$atts['aria-expanded'] = 'false';
 				$atts['class']         = 'dropdown-toggle nav-link';

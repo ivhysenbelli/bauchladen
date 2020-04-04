@@ -92,6 +92,11 @@
                         padding: 1em;
                         font-size: 15px;
                     }
+                    &.current_page_item {
+                        a{
+                            color: $zambezi;
+                        }
+                    }
                 }
                 @include media-breakpoint-down(md){
                     padding: 0 2em;

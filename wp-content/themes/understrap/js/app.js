@@ -10,6 +10,29 @@ jQuery(document).ready(function($) {
         }
     });
 
+    if ($(window).width() > 769) {
+        $('.navbar .dropdown').hover(function() {
+            $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
+
+        }, function() {
+            $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
+
+        });
+
+        $('.navbar .dropdown > a').click(function() {
+            location.href = this.href;
+        });
+
+    }
+    //Scroll to anchor
+    $(document).on('click', '.dropdown-item', function(event) {
+        event.preventDefault();
+
+        $('html, body').animate({
+            scrollTop: $($.attr(this, 'href')).offset().top - 175
+        }, 500);
+    });
+
 
     $(".custom-checkbox").click(function(event) {
         if (this.checked) {
