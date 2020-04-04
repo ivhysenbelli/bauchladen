@@ -1,0 +1,66 @@
+.section-cta {
+    color: $white;
+    @include media-breakpoint-down(md) {
+           margin: 0 -45px 100px;
+        }
+
+    .details-row {
+        background-color: $primary;
+        padding: 4em 2em;
+        display: flex;
+        align-items: center;
+
+        @include media-breakpoint-down(md) {
+            flex-direction: column;
+        }
+
+        .single-col {
+            &.descripton-col {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &:before {
+                    content: '\f073';
+                    font-family: "FontAwesome";
+                    color: $white;
+                    font-size: 1.25rem;
+                }
+
+                .description {
+                    margin-bottom: 0;
+                    margin-left: 2em;
+                }
+            }
+
+            &.button-col {
+                color: $white;
+                margin-left: auto;
+
+                a {
+                    color: $white;
+                    text-transform: uppercase;
+                    font-size: 10px;
+                    font-weight: 700;
+                    letter-spacing: 1px;
+                    border: 2px solid $white;
+                    border-radius: 4px;
+                    line-height: 39px;
+                    padding: 23px;
+                    text-decoration: none;
+                    transition: all .3s ease;
+
+                    &:hover {
+                        background: $white;
+                        color: $primary;
+                    }
+                }
+
+                @include media-breakpoint-down(md) {
+                    margin: 0;
+                    margin-top: 3em;
+                }
+            }
+        }
+    }
+}

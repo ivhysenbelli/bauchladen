@@ -62,6 +62,19 @@ function my_acf_json_load_point( $paths ) {
     
 }
 
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page(array(
+		'page_title' 	=> 'Theme Event Settings',
+		'menu_title'	=> 'Theme Event Settings',
+		'menu_slug' 	=> 'theme-event-settings',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
+	
+	
+}
+
 wp_enqueue_style( 'jquery-ui-css-air', 'https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css');
 wp_enqueue_script('flatpicker-date', 'https://cdn.jsdelivr.net/npm/flatpickr');
 wp_enqueue_script('flatpickr-date-de', 'https://npmcdn.com/flatpickr/dist/l10n/de.js');

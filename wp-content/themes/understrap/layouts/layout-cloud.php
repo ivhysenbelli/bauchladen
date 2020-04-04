@@ -39,5 +39,9 @@ if( have_rows('layouts') ):
 			get_template_part( 'sections/section', 'references' );
 		endif;
 
+		if( get_row_layout() == 'section_cta' ):
+			get_template_part( 'sections/section', 'cta' );
+		endif;
+
 	endwhile;
 endif;
