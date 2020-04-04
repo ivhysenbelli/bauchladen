@@ -1,5 +1,5 @@
 <?php $background = get_sub_field_object('background_color'); ?>
-<section class="section section-two-columns <?php if($background['value'] == true) { echo "has-bg"; } ?>">
+<section class="section section-two-columns <?php if($background['value'] == true) { echo "has-bg"; } ?>" id="<?php strtolower(the_sub_field('section_id')); ?>">
 	<?php $order = get_sub_field('order'); ?>
 	<div class="row <?php if ($order == "rtl") { echo "flex-row-reverse"; } ?>">
 		<div class="col-md-12 col-lg-6 image-col">

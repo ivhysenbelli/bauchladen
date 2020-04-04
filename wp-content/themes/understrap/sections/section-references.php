@@ -1,4 +1,4 @@
-<section class="section section-references">
+<section class="section section-references" id="<?php strtolower(the_sub_field('section_id')); ?>">
 	<div class="container">
 		<div class="col-12">
 				<div class="title">

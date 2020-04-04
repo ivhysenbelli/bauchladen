@@ -1,4 +1,4 @@
-<section class="section section-videos">
+<section class="section section-videos" id="<?php strtolower(the_sub_field('section_id')); ?>">
   <div class="container">
     <?php $count = count(get_sub_field('videos')); ?>
       <div class="row">

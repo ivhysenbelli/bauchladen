@@ -190,8 +190,18 @@ if ( ! class_exists( 'Understrap_WP_Bootstrap_Navwalker' ) ) {
 
 			// If item has_children add atts to <a>.
 			if ( isset( $args->has_children ) && $args->has_children && 0 === $depth && 1 !== $args->depth ) {
-				$atts['href']          = '#';
-				$atts['data-toggle']   = 'dropdown';
+
+				if ( wp_is_mobile() ) {
+				    // Parent link inactive
+				    $atts['href'] = '#';
+				    // Parent link toggles dropdown
+				    $atts['data-toggle'] = 'dropdown';
+				} else {
+				   // Parent link active
+				   $atts['href'] = ! empty( $item->url ) ? $item->url : '';
+				   // Parent link shows dropdown on hover 
+				   $atts['data-hover'] = 'dropdown';
+				};
 				$atts['aria-haspopup'] = 'true';
 				$atts['aria-expanded'] = 'false';
 				$atts['class']         = 'dropdown-toggle nav-link';

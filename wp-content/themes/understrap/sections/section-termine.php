@@ -7,7 +7,7 @@ $args = array(
 
 $posts = get_posts($args);
 ?>
-<section class="section section-termine">
+<section class="section section-termine" id="<?php strtolower(the_sub_field('section_id')); ?>">
 	<div class="container">
 	  	<div class="row">
 	  		<div class="col-12">
@@ -15,9 +15,9 @@ $posts = get_posts($args);
 			        <h2><?php the_sub_field('section_title') ?></h2>
 			      </div>
 			      <div class="subtitle">
-			          <?php if(!empty(get_sub_field('editor'))): ?>
+			          <?php if(!empty(get_sub_field('section_description'))): ?>
 			            <p class="header-description">
-			              <?php the_sub_field('editor'); ?>
+			              <?php the_sub_field('section_description'); ?>
 			            </p>
 			        <?php endif; ?>
 			      </div>

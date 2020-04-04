@@ -1,4 +1,4 @@
-<section class="section section-testimonials">
+<section class="section section-testimonials" id="<?php strtolower(the_sub_field('section_id')); ?>">
 <div class="container">
   	<div class="row">
   		<div class="col-12">

@@ -52,7 +52,7 @@
             background: $whisper;
             padding: 3em 2em;
                @include media-breakpoint-down(md) {
-                	 padding: 1.5em 0;
+                	 padding: 1.5em .5em;
                 }
 
         }
