@@ -13,9 +13,23 @@
             flex: 0 1 auto;
             margin-bottom: 30px;
             border-radius: 5px;
-            &.full-height{
-            	height: 500px;
-            	flex-direction: column;
+
+            &.full-height {
+                height: 500px;
+                flex-direction: column;
+
+                a {
+                    .single-item {
+                        flex-direction: column;
+
+                        &.image-item {
+                            .image {
+                                flex: 0 1 80%;
+
+                            }
+                        }
+                    }
+                }
             }
 
             a {

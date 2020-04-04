@@ -24,7 +24,8 @@
 				<div class="row">
 					<?php foreach ($posts as $post): ?>
 						<?php if (has_post_thumbnail( $post->ID )): ?>
-						<div class="grid-item col-lg-8 <?php //if($fullHeigit == 0 ){ echo "full-height"; } ?>">
+							<?php $fullHeight = get_field_object('show_full_height'); ?>
+						<div class="grid-item col-lg-8 <?php if($fullHeight['value'] == ture) { echo "full-height";}?>">
 							<a href="/<?php echo $category->category_nicename ?>/<?php echo $post->post_name ?>">
 								<div class="single-item image-item">
 									<div class="image" style="background-image: url('<?php the_post_thumbnail_url($post->ID); ?>');">
