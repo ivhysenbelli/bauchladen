@@ -1,4 +1,7 @@
 .section-text {
+	@include media-breakpoint-down (md){
+		padding: 0 1em;
+	}
 	.title {
 		text-align: center;
 		margin: 0 auto 3em;

@@ -34,7 +34,12 @@
     <div class="extra-info section-extra-info <?php if($hasBg['value'] == TRUE ){echo "has-bg";} ?>">
       <div class="container">
         <div class="row">
-          <p><?php the_sub_field('text'); ?></p>
+          <div class="col-lg-9 single-col">
+            <p><?php the_sub_field('text'); ?></p>
+          </div>
+          <div class="col-lg-3 single-col">
+            <a href="<?php the_sub_field('cta_link') ?>"><?php the_sub_field('cta_text') ?> <i class="fa fa-arrow-right"></i></a>
+          </div>
         </div>
       </div>
     </div>
