@@ -7,7 +7,7 @@
 				</div>
 			</div>
 			<?php while(have_rows('links')): the_row(); ?>
-				<div class="col-lg-4">
+				<div class="col-lg-4 link-col">
 					<?php the_sub_field('link'); ?>
 				</div>
 			<?php endwhile;?>
