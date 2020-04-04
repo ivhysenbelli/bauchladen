@@ -32,6 +32,11 @@ foreach ( $understrap_includes as $file ) {
 }
 
 
+register_nav_menus( array(
+    'categories_sidebar_menu' => 'Categories Sidebar Menu',
+) );
+
+
 add_filter('acf/settings/save_json', 'my_acf_json_save_point');
  
 function my_acf_json_save_point( $path ) {
@@ -68,6 +73,14 @@ if( function_exists('acf_add_options_page') ) {
 		'page_title' 	=> 'Theme Event Settings',
 		'menu_title'	=> 'Theme Event Settings',
 		'menu_slug' 	=> 'theme-event-settings',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
+	
+	acf_add_options_page(array(
+		'page_title' 	=> 'Theme Sidebar Settings',
+		'menu_title'	=> 'Theme Sidebar Settings',
+		'menu_slug' 	=> 'theme-sidebar-settings',
 		'capability'	=> 'edit_posts',
 		'redirect'		=> false
 	));

@@ -93,3 +93,60 @@
 
         }
     }
+
+    .sidebar-col {
+        @include media-breakpoint-up(md) {
+            margin-top: 135px;
+        }
+
+        h3 {
+            text-transform: uppercase;
+            color: $black;
+            font-weight: 600;
+            font-size: 2rem;
+            margin-bottom: 1em
+        }
+
+        .sidebar-navigation {
+
+            ul {
+                padding: 0;
+                // padding-left: 15px;
+                margin: 0;
+                list-style: none;
+
+                li {
+                    margin-bottom: .5em;
+
+                    a {
+                        font-weight: 500;
+                        color: $zambezi;
+                        text-decoration: none;
+                        font-size: 1.15rem;
+                        transition: all .3s ease;
+
+                        &:hover {
+                            color: $primary;
+                        }
+                    }
+                }
+            }
+        }
+
+        .social-links {
+            margin-top: 50px;
+
+            .links {
+                a {
+                    font-size: 2rem;
+                    margin-right: 10px;
+                    color: $zambezi;
+                    transition: all .3s ease;
+
+                    &:hover {
+                        color: $primary;
+                    }
+                }
+            }
+        }
+    }
