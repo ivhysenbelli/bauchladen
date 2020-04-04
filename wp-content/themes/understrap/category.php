@@ -42,7 +42,7 @@
 						</div>
 						<?php else: ?>
 						<div class="grid-item col-lg-4">
-							<a href="/<?php echo $post->post_name ?>">
+							<a href="/<?php echo $category->category_nicename ?>/<?php echo $post->post_name ?>">
 								<div class="single-item no-image-item">
 									<div class="title">
 										<?php echo $post->post_title; ?>
