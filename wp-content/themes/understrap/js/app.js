@@ -25,7 +25,7 @@ jQuery(document).ready(function($) {
 
     }
     //Scroll to anchor
-    $(document).on('click', '.dropdown-item', function(event) {
+    $(document).on('click', '#menu-item-dropdown-16703 .dropdown-item', function(event) {
         event.preventDefault();
 
         $('html, body').animate({

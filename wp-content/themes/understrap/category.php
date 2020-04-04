@@ -21,18 +21,42 @@
 				<h2><?php echo $category->name ?></h2>
 			</div>
 			<div class="grid-view">
-				<?php foreach ($posts as $post): ?>
-					<a href="/<?php echo $post->post_name ?>">
-						<div class="grid-item">
-							<div class="title">
-								<?php echo $post->post_title; ?>
-							</div>
-							<div class="content">
-								<?php echo wp_trim_words($post->post_content, rand(15,35), "..."); ?>
-							</div>
+				<div class="row">
+					<?php foreach ($posts as $post): ?>
+						<?php if (has_post_thumbnail( $post->ID )): ?>
+						<div class="grid-item col-lg-8 <?php //if($fullHeigit == 0 ){ echo "full-height"; } ?>">
+							<a href="/<?php echo $post->post_name ?>">
+								<div class="single-item image-item">
+									<div class="image" style="background-image: url('<?php the_post_thumbnail_url($post->ID); ?>');">
+									</div>
+									<div class="data">
+																		<div class="title">
+									<?php echo $post->post_title; ?>
+								</div>
+								<div class="content">
+									<?php echo wp_trim_words($post->post_content, 30, "..."); ?>
+								</div>
+									</div>
+								</div>
+							</a>
 						</div>
-					</a>
+						<?php else: ?>
+						<div class="grid-item col-lg-4">
+							<a href="/<?php echo $post->post_name ?>">
+								<div class="single-item no-image-item">
+									<div class="title">
+										<?php echo $post->post_title; ?>
+									</div>
+									<div class="content">
+										<?php echo wp_trim_words($post->post_content, 30, "..."); ?>
+									</div>
+								</div>
+							</a>
+						</div>
+						<?php endif; ?>	
+
 				<?php endforeach; ?>
+				</div>
 			</div>
 		</div>
 		<div class="col-lg-3 sidebar-col">

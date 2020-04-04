@@ -1,37 +1,81 @@
-.grid-view {
-	display: flex;
-	flex-wrap: wrap;
+    .title {
+        margin: 45px 0;
+        color: $black;
+    }
 
-	a {
-		color: $black;
-		text-decoration: none;
+    .grid-view {
+        display: flex;
+        flex-wrap: wrap;
 
-		.grid-item {
-			background-color: $white;
-			padding: 1.25em;
-			transition: all .3s ease;
-			height: 150px;
-			overflow: hidden;
-			flex: 0 1 auto;
-			margin-bottom: 15px;
+        .grid-item {
+            transition: all .3s ease;
+            height: 250px;
+            flex: 0 1 auto;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            &.full-height{
+            	height: 500px;
+            	flex-direction: column;
+            }
 
-			.title {
-				text-transform: uppercase;
-				font-size: 18px;
-				margin-bottom: 1.5em;
-				font-weight: 600;
-				color: $black;
-			}
+            a {
+                color: $black;
+                text-decoration: none;
+                display: block;
+                background: $white;
+                height: 100%;
+                border-radius: 5px;
+                transition: all .3s ease;
 
-			font-size: 14px;
-			font-weight: 400;
-			color: $zambezi;
-		}
+                .title {
+                    text-transform: uppercase;
+                    font-size: 18px;
+                    margin: 0;
+                    margin-bottom: .5em;
+                    font-weight: 600;
+                    color: $black;
+                }
 
-		&:hover {
-			.single-post {
-				box-shadow: 0 0 20px 0 rgba($zambezi, 0.25);
-			}
-		}
-	}
-}
+                font-size: 14px;
+                font-weight: 400;
+                color: $zambezi;
+
+                .single-item {
+                    overflow: hidden;
+                    height: 100%;
+                    transition: all .3s ease;
+
+                    &.image-item {
+                        display: flex;
+                        height: 100%;
+                        border-radius: 3px;
+
+                        .image {
+                            max-width: 100%;
+                            width: 100%;
+                            height: inhereit;
+                            background-size: cover;
+                            background-position: center;
+                            flex: 0 1 50%;
+                        }
+
+                        .data {
+                            padding: 1.25em;
+                            flex: 0 1 50%;
+                        }
+                    }
+
+                    &.no-image-item {
+                        padding: 1.25em;
+                    }
+                }
+
+                &:hover {
+                    .single-item {
+                        box-shadow: 0 0 15px 0 rgba($zambezi, 0.25);
+                    }
+                }
+            }
+
+        }
+    }
