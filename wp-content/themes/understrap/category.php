@@ -24,14 +24,15 @@
 						    $cat = get_category( $c );
 						    $cats[] = array( 'name' => $cat->name, 'slug' => $cat->slug );
 						}
-						$filterCategory = $cats[1]['slug']; 
+						$filterCategory = $cats[1]['slug'];
+						$filterCategory2 = $cats[2]['slug'];
 						?>
 
 						<?php if (has_post_thumbnail( $post->ID )): ?>
 							<?php $fullHeight = get_field_object('show_full_height'); ?>
 							<?php $smallImage = get_field_object('show_small_image'); ?>
 							<?php if($fullHeight['value'] == true):?>
-							<div class="grid-item col-lg-8 full-height show-item" data-filter="<?php echo $filterCategory; ?>">
+							<div class="grid-item col-lg-8 full-height show-item" data-filter="<?php echo $filterCategory." ".$filterCategory2; ?>">
 								<a href="/<?php echo $category->category_nicename ?>/<?php echo $post->post_name ?>">
 									<div class="single-item image-item">
 										<div class="image" style="background-image: url('<?php the_post_thumbnail_url($post->ID); ?>');">
@@ -48,7 +49,7 @@
 								</a>
 							</div>
 							<?php elseif($smallImage['value'] == true):?>
-								<div class="grid-item col-lg-4 small-image show-item" data-filter="<?php echo $filterCategory; ?>">
+								<div class="grid-item col-lg-4 small-image show-item" data-filter="<?php echo $filterCategory." ".$filterCategory2; ?>">
 									<a href="/<?php echo $category->category_nicename ?>/<?php echo $post->post_name ?>">
 										<div class="single-item image-item">
 											<div class="image" style="background-image: url('<?php the_post_thumbnail_url($post->ID); ?>');">
@@ -65,7 +66,7 @@
 									</a>
 								</div>
 							<?php else: ?>
-								<div class="grid-item col-lg-8 show-item" data-filter="<?php echo $filterCategory; ?>">
+								<div class="grid-item col-lg-8 show-item" data-filter="<?php echo $filterCategory." ".$filterCategory2; ?>">
 								<a href="/<?php echo $category->category_nicename ?>/<?php echo $post->post_name ?>">
 									<div class="single-item image-item">
 										<div class="image" style="background-image: url('<?php the_post_thumbnail_url($post->ID); ?>');">
@@ -83,7 +84,7 @@
 								</div>
 							<?php endif; ?>
 						<?php else: ?>
-						<div class="grid-item col-lg-4 show-item" data-filter="<?php echo $filterCategory; ?>">
+						<div class="grid-item col-lg-4 show-item" data-filter="<?php echo $filterCategory." ".$filterCategory2; ?>">
 							<a href="/<?php echo $category->category_nicename ?>/<?php echo $post->post_name ?>">
 								<div class="single-item no-image-item">
 									<div class="title">
@@ -103,25 +104,6 @@
 		</div>
 		<?php wp_reset_postdata(); ?>
 
-		<?php 
-		$today = current_time('d M, y');
-
-		$args = array(
-				'post_type' 		=> 'event',
-				'posts_per_page' 	=>  -1,
-				'meta_query'     => array (
-					array (
-                    	'key'        => 'course_date',
-                        'compare'    => '>=',
-                        'value'      => $today,
-                        )
-                    ),
-				'orderby'			=> 'meta_value',
-				'order'				=> 'ASC'
-			);
-
-		$termine = get_posts($args);
-		?>
 		<div class="col-lg-3 sidebar-col">
 			<div class="sidebar-navigation">
 				<h3>Kategorien</h3>
@@ -131,24 +113,8 @@
 						'theme_location'  => 'categories_sidebar_menu',
 					)
 				); ?>
-			</div>
-			
-			<div class="events-dates">
-				<?php foreach ($termine as $termin):?>
-				<?php echo $termin->post_title; 
-									echo "</br>"; 
+			</div>			
 
-					 while(have_rows('kurs',$termin->ID)): the_row(); 
-							setlocale(LC_TIME, "de_DE");
-							$time = strtotime(str_replace('/', '-', get_sub_field('course_date')));
-							$date = date('d.m.Y', strtotime(str_replace('/', '-', get_sub_field('course_date'))));
-							$newformat = strftime('%a, ',$time);
-							echo $newformat.$date;
-					echo "</br>"; 
-					 endwhile;
-				endforeach; ?>
-			</div>
-			
 			<div class="social-links">
 				<h3><?php the_field("section_title",'options'); ?></h3>
 				<div class="links">

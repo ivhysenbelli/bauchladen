@@ -163,6 +163,13 @@
 
                 li {
                     margin-bottom: .5em;
+                    position: relative;
+
+                    &.active {
+                        a {
+                            color: $primary;
+                        }
+                    }
 
                     a {
                         font-weight: 500;
@@ -170,10 +177,40 @@
                         text-decoration: none;
                         font-size: 1.15rem;
                         transition: all .3s ease;
+                        display: flex;
+                        align-items: center;
 
                         &:hover {
                             color: $primary;
                         }
+                        &.active{
+                            color: $primary;
+                        }
+
+                        &:after {
+                            content: ' \f107';
+                            display: block;
+                            font-family: 'FontAwesome';
+                            margin-left: 5px;
+                        }
+                    }
+
+                }
+
+                &.sub-menu {
+                    padding-left: 15px;
+
+                    li {
+                        a {
+                            font-size: 14px;
+
+                            &:after {
+                                content: '';
+                                display: block;
+
+                            }
+                        }
+
                     }
                 }
             }

@@ -177,56 +177,55 @@ jQuery(document).ready(function($) {
     });
 
 
-            var url = $(location).attr('href'),
-            parts = url.split("/"),
-            last_part = parts[parts.length - 2];
-
+    var url = $(location).attr('href'),
+        parts = url.split("/"),
+        last_part = parts[parts.length - 2];
         console.log(last_part);
-                if (last_part == 'beratung') {
-            $('.grid-item').each(function() {
-                $(this).fadeIn("slow", function() {
-                    $(this).addClass('show-item');
-                });
-                $(this).fadeIn("slow", function() {
-                    $(this).removeClass('hide-item');
 
-                });
+    if (last_part == 'beratung') {
+        $('.grid-item').each(function() {
+            $(this).fadeIn("slow", function() {
+                $(this).addClass('show-item');
             });
-
-        } else {
-            $('.grid-item[data-filter="' + last_part + '"]').each(function() {
-                $(this).fadeIn("slow", function() {
-                    $(this).addClass('show-item');
-                });
-
-                $(this).fadeIn("slow", function() {
-                    $(this).removeClass('hide-item');
-
-                });
-            });
-
-            $('.grid-item[data-filter!="' + last_part + '"]').each(function() {
-
-                $(this).fadeIn("slow", function() {
-                    $(this).addClass('hide-item');
-                });
-                $(this).fadeIn("slow", function() {
-                    $(this).removeClass('show-item');
-
-                });
+            $(this).fadeIn("slow", function() {
+                $(this).removeClass('hide-item');
 
             });
-        }
+        });
+
+    } else {
+        $('.grid-item[data-filter="' + last_part + '"]').each(function() {
+            $(this).fadeIn("slow", function() {
+                $(this).addClass('show-item');
+            });
+
+            $(this).fadeIn("slow", function() {
+                $(this).removeClass('hide-item');
+
+            });
+        });
+
+        $('.grid-item[data-filter!="' + last_part + '"]').each(function() {
+
+            $(this).fadeIn("slow", function() {
+                $(this).addClass('hide-item');
+            });
+            $(this).fadeIn("slow", function() {
+                $(this).removeClass('show-item');
+
+            });
+
+        });
+    }
 
 
     $('#menu-sidebar-categories a').click(function(e) {
         e.preventDefault();
-
         var url = $(this).attr('href'),
             parts_2 = url.split("/"),
             last_part_2 = parts_2[parts_2.length - 2];
 
-        console.log(last_part_2);
+            console.log(last_part_2);
 
         if (last_part_2 == 'beratung') {
             $('.grid-item').each(function() {
@@ -264,7 +263,9 @@ jQuery(document).ready(function($) {
             });
         }
 
-
     });
+
+
+
 
 });
