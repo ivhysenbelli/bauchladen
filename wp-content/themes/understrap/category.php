@@ -7,6 +7,7 @@
 			$args = array(
 			  'post_type'   => 'post',
 			  'posts_per_page' => -1,
+			  'cat' => $category->cat_ID,
 			);
 			$posts = get_posts( $args );
 			?>
@@ -24,15 +25,13 @@
 						    $cat = get_category( $c );
 						    $cats[] = array( 'name' => $cat->name, 'slug' => $cat->slug );
 						}
-						$filterCategory = $cats[1]['slug'];
-						$filterCategory2 = $cats[2]['slug'];
 						?>
 
 						<?php if (has_post_thumbnail( $post->ID )): ?>
 							<?php $fullHeight = get_field_object('show_full_height'); ?>
 							<?php $smallImage = get_field_object('show_small_image'); ?>
 							<?php if($fullHeight['value'] == true):?>
-							<div class="grid-item col-lg-8 full-height show-item" data-filter="<?php echo $filterCategory." ".$filterCategory2; ?>">
+							<div class="grid-item col-lg-8 full-height ">
 								<a href="/<?php echo $category->category_nicename ?>/<?php echo $post->post_name ?>">
 									<div class="single-item image-item">
 										<div class="image" style="background-image: url('<?php the_post_thumbnail_url($post->ID); ?>');">
@@ -49,7 +48,7 @@
 								</a>
 							</div>
 							<?php elseif($smallImage['value'] == true):?>
-								<div class="grid-item col-lg-4 small-image show-item" data-filter="<?php echo $filterCategory." ".$filterCategory2; ?>">
+								<div class="grid-item col-lg-4 small-image">
 									<a href="/<?php echo $category->category_nicename ?>/<?php echo $post->post_name ?>">
 										<div class="single-item image-item">
 											<div class="image" style="background-image: url('<?php the_post_thumbnail_url($post->ID); ?>');">
@@ -66,7 +65,7 @@
 									</a>
 								</div>
 							<?php else: ?>
-								<div class="grid-item col-lg-8 show-item" data-filter="<?php echo $filterCategory." ".$filterCategory2; ?>">
+								<div class="grid-item col-lg-8">
 								<a href="/<?php echo $category->category_nicename ?>/<?php echo $post->post_name ?>">
 									<div class="single-item image-item">
 										<div class="image" style="background-image: url('<?php the_post_thumbnail_url($post->ID); ?>');">
@@ -84,7 +83,7 @@
 								</div>
 							<?php endif; ?>
 						<?php else: ?>
-						<div class="grid-item col-lg-4 show-item" data-filter="<?php echo $filterCategory." ".$filterCategory2; ?>">
+						<div class="grid-item col-lg-4">
 							<a href="/<?php echo $category->category_nicename ?>/<?php echo $post->post_name ?>">
 								<div class="single-item no-image-item">
 									<div class="title">
@@ -102,7 +101,6 @@
 				</div>
 			</div>
 		</div>
-		<?php wp_reset_postdata(); ?>
 
 		<div class="col-lg-3 sidebar-col">
 			<div class="sidebar-navigation">
@@ -128,6 +126,5 @@
 	</div>
 </div>
 
-
-
+<?php wp_reset_postdata(); ?>
 <?php get_footer(); ?>
