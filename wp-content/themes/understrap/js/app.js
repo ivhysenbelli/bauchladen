@@ -190,5 +190,4 @@ jQuery(document).ready(function($) {
     };
     $('#page').smoothState(settings);
 
-
 });

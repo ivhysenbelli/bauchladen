@@ -1,6 +1,12 @@
 <?php $image = get_sub_field('banner_image') ?>
 <section class="section section-main-banner" style="background-image: url('<?php echo $image['url']; ?>');">
 
+<style type="text/css">
+	
+					@font-face { font-family:Wrexham Script;src:url(../../wp-content/uploads/2019/05/Wrexham-Script.ttf.ttf) format('truetype'), 
+					url(../../wp-content/uploads/2019/05/Wrexham-Script.ttf.svg#wrexham_script) format('svg');font-display: swap;}				
+</style>
+
 	<?php $announcement = get_sub_field_object('show_announcement') ?>
 	<?php if($announcement['value'] ==  true): ?>
 		<div class="announcemet-wrapper">
