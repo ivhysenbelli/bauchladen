@@ -6,6 +6,10 @@
     padding: 72px 0 52px 0;
     background-color: $nero;
 
+    #footer-full-content {
+        outline: none !important;
+    }
+
     .textwidget {
         color: lighten($zambezi, 20%);
         font-size: 16px;
@@ -24,9 +28,10 @@
     }
 
     .widget_nav_menu {
-        @include media-breakpoint-down (md){
+        @include media-breakpoint-down (md) {
             margin-top: 2em;
         }
+
         ul {
             list-style: none;
             padding: 0;

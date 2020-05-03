@@ -61,12 +61,16 @@
     }
 
     .announcemet-wrapper {
-        max-width: 1140px;
+        max-width: 100%;
         position: relative;
         margin: 0 auto;
         height: auto;
         width: 100%;
         margin-bottom: 3em;
+
+        @include media-breakpoint-up(xl) {
+            left: 20%;
+        }
 
         @include media-breakpoint-down(md) {
             padding: 0 1.5em;

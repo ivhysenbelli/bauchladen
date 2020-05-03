@@ -24,15 +24,15 @@
     }
 
     .single-col {
-        margin-bottom: 2em;
 
         @include media-breakpoint-down(md) {
             margin-bottom: 2em;
         }
+
     }
 
     .section-extra-info {
-    	padding: 15px 0;
+    	padding: 15px 0 0;
         &.has-bg {
             .row {
                 background-color: $whisper;

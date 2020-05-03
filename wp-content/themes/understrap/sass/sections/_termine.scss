@@ -1,5 +1,6 @@
 .section-termine {
     overflow: hidden;
+    margin-top: -15px;
 
     @include media-breakpoint-down(md) {
         padding: 0;
@@ -24,7 +25,8 @@
             margin: 0 auto;
         }
     }
-    .subtitle{
+
+    .subtitle {
         text-align: center;
     }
 
@@ -239,7 +241,6 @@
     .custom-contact-form {
         background: #eeeeee;
         margin-top: 2em;
-        padding-bottom: 1em;
         transition: all .750s ease;
         max-height: 2000px;
         overflow: hidden;
@@ -318,7 +319,7 @@
             .personal-information,
             .birth-information,
             .more-information {
-                margin-bottom: 50px;
+                margin-bottom: 15px;
             }
 
             .birth-information {
@@ -374,7 +375,7 @@
             .partner-info {
                 display: flex;
                 flex-direction: column;
-                margin-bottom: 30px;
+                margin-bottom: 15px;
 
                 p {
                     display: flex;
@@ -404,6 +405,15 @@
                 @include placeholder {
                     color: rgba($zambezi, 0.5);
                 }
+
+                &:focus {
+                    box-shadow: 0 0 0 0.2rem rgba(195, 85, 85, .25);
+
+                }
+            }
+
+            br {
+                display: none;
             }
 
             textarea {
