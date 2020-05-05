@@ -8,6 +8,7 @@
     justify-content: center;
     flex-direction: column;
     margin-bottom: 0;
+    position: relative;
 
     .data {
         display: flex;
@@ -61,15 +62,15 @@
     }
 
     .announcemet-wrapper {
-        max-width: 100%;
+        flex: 0 1 100%;
+        max-width: 1140px;
         position: relative;
-        margin: 0 auto;
+        margin: 0 auto 3em;
         height: auto;
         width: 100%;
-        margin-bottom: 3em;
 
-        @include media-breakpoint-up(xl) {
-            left: 20%;
+        @include media-breakpoint-up (xl){
+            left: -5em;
         }
 
         @include media-breakpoint-down(md) {
@@ -84,8 +85,6 @@
             color: $white;
             font-weight: 300;
             width: 100%;
-            max-width: fit-content;
-            margin-left: 2em;
 
             @include media-breakpoint-down(md) {
                 margin: 0;
@@ -119,6 +118,13 @@
             }
 
         }
+    }
+    .data-information{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
     }
 
 }
