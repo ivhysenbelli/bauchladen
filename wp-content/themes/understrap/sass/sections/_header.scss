@@ -108,6 +108,11 @@
                     }
                 }
             }
+            &.third-level-menu{
+                @inclue media-breakpoint-up(md){
+                    display: none !important;
+                }
+            }
         }
     }
 

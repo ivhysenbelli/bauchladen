@@ -121,3 +121,15 @@ function posts_custom_columns($column_name, $id){
         echo the_post_thumbnail( 'thumbnail' );
     }
 }
+
+function change_ul_item_classes_in_nav( $classes, $args, $depth ) {
+    if ( 0 == $depth ) {
+        $classes[] = 'second-level-menu';
+    }
+    if ( 1 == $depth ) {
+        $classes[] = 'third-level-menu';
+    }
+    // ...
+    return $classes;
+}
+add_filter( 'nav_menu_submenu_css_class', 'change_ul_item_classes_in_nav', 10, 3 );
