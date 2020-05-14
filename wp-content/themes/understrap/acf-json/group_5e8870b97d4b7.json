@@ -3,10 +3,10 @@
     "title": "Post Data",
     "fields": [
         {
-            "key": "field_5e8870ccf988d",
-            "label": "Show Full Height",
-            "name": "show_full_height",
-            "type": "true_false",
+            "key": "field_5ebd6bb3d3018",
+            "label": "Image Size",
+            "name": "image_size",
+            "type": "radio",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -15,38 +15,18 @@
                 "class": "",
                 "id": ""
             },
-            "message": "",
-            "default_value": 0,
-            "ui": 1,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
-            "key": "field_5e9009e4f2d88",
-            "label": "Show Small Image",
-            "name": "show_small_image",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5e8870ccf988d",
-                        "operator": "!=",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
+            "choices": {
+                "full-box": "2x2",
+                "two-one": "2x1",
+                "one-two": "1x2",
+                "one-one": "1x1"
             },
-            "message": "",
-            "default_value": 0,
-            "ui": 1,
-            "ui_on_text": "",
-            "ui_off_text": ""
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
         }
     ],
     "location": [
@@ -66,5 +46,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1586498057
+    "modified": 1589472378
 }

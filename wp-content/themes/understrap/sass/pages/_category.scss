@@ -66,7 +66,8 @@
 
 
 
-                &.full-height {
+                &.full-box,
+                &.one-two {
                     height: 500px;
                     flex-direction: column;
 
@@ -81,6 +82,11 @@
                                 }
                             }
                         }
+                    }
+                }
+                &.hide-image{
+                    div.image{
+                        display: none;
                     }
                 }
 

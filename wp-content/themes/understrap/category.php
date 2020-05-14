@@ -27,11 +27,26 @@
 						}
 						?>
 
-						<?php if (has_post_thumbnail( $post->ID )): ?>
-							<?php $fullHeight = get_field_object('show_full_height'); ?>
-							<?php $smallImage = get_field_object('show_small_image'); ?>
-							<?php if($fullHeight['value'] == true):?>
-							<div class="grid-item col-lg-8 full-height ">
+						<?php if (has_post_thumbnail( $post->ID )):  
+							$colVariable = "";
+							switch (get_field('image_size',$post->ID)) {
+							case 'full-box':
+								$colVariable = 'col-lg-8 full-box';
+								break;
+							case 'two-one':
+								$colVariable = 'col-lg-8 two-one';
+								break;
+							case 'one-two':
+								$colVariable = 'col-lg-4 one-two';
+								break;
+							case 'one-one':
+								$colVariable = 'col-lg-4 hide-image';
+								break;
+							default:
+								$colVariable = 'col-lg-4 hide-image';
+								break;
+						} ?>
+							<div class="grid-item <?php echo $colVariable; ?>">
 								<a href="/<?php echo $category->category_nicename ?>/<?php echo $post->post_name ?>">
 									<div class="single-item image-item">
 										<div class="image" style="background-image: url('<?php the_post_thumbnail_url($post->ID); ?>');">
@@ -47,41 +62,6 @@
 									</div>
 								</a>
 							</div>
-							<?php elseif($smallImage['value'] == true):?>
-								<div class="grid-item col-lg-4 small-image">
-									<a href="/<?php echo $category->category_nicename ?>/<?php echo $post->post_name ?>">
-										<div class="single-item image-item">
-											<div class="image" style="background-image: url('<?php the_post_thumbnail_url($post->ID); ?>');">
-											</div>
-											<div class="data">
-												<div class="title">
-													<?php echo $post->post_title; ?>
-												</div>
-												<div class="content">
-													<?php echo wp_trim_words($post->post_content, 10, "..."); ?>
-												</div>
-											</div>
-										</div>
-									</a>
-								</div>
-							<?php else: ?>
-								<div class="grid-item col-lg-8">
-								<a href="/<?php echo $category->category_nicename ?>/<?php echo $post->post_name ?>">
-									<div class="single-item image-item">
-										<div class="image" style="background-image: url('<?php the_post_thumbnail_url($post->ID); ?>');">
-										</div>
-										<div class="data">
-											<div class="title">
-												<?php echo $post->post_title; ?>
-											</div>
-											<div class="content">
-												<?php echo wp_trim_words($post->post_content, 30, "..."); ?>
-												</div>
-											</div>
-										</div>
-									</a>
-								</div>
-							<?php endif; ?>
 						<?php else: ?>
 						<div class="grid-item col-lg-4">
 							<a href="/<?php echo $category->category_nicename ?>/<?php echo $post->post_name ?>">
