@@ -19,20 +19,26 @@ $container = get_theme_mod( 'understrap_container_type' );
 		<div class="row">
 
 			<main class="site-main" id="main">
+				<div class="row">
+					<div class="col-lg-9">
+						<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php while ( have_posts() ) : the_post(); ?>
+							<?php get_template_part( 'loop-templates/content', 'single' ); ?>
 
-					<?php get_template_part( 'loop-templates/content', 'single' ); ?>
+							<?php
+							// If comments are open or we have at least one comment, load up the comment template.
+							if ( comments_open() || get_comments_number() ) :
+								comments_template();
+							endif;
+							?>
 
-					<?php
-					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) :
-						comments_template();
-					endif;
-					?>
+						<?php endwhile; // end of the loop. ?>
+					</div>
 
-				<?php endwhile; // end of the loop. ?>
 
+					<!-- Get the custom right sidebar -->
+			<?php get_template_part( 'global-templates/custom-right-sidebar' ); ?>
+				</div>
 			</main><!-- #main -->
 
 		</div><!-- .row -->

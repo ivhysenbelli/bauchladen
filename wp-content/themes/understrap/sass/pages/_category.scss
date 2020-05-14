@@ -96,7 +96,6 @@
                     overflow: hidden;
 
                     .title {
-                        text-transform: uppercase;
                         font-size: 18px;
                         margin: 0;
                         margin-bottom: .5em;
@@ -167,17 +166,31 @@
 
 
     .sidebar-col {
+
         @include media-breakpoint-up(md) {
             margin-top: 135px;
             padding-bottom: 5em;
         }
+        .affix{
+            position: sticky;
+            top: 5em;
+        }
 
         h3 {
-            text-transform: uppercase;
             color: $black;
-            font-weight: 600;
             font-size: 2rem;
             margin-bottom: 1em
+        }
+        .sidebar-search{
+            margin-bottom: 2em;
+            input{
+                &:hover,
+                &:focus,
+                &:active{
+                    outline: none;
+                    box-shadow: 0 0 15px 4px rgba($primary, 0.05);
+                }
+            }
         }
 
         .sidebar-navigation {

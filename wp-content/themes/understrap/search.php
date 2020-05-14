@@ -24,9 +24,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<?php get_template_part( 'global-templates/left-sidebar-check' ); ?>
 
 			<main class="site-main" id="main">
-
-				<?php if ( have_posts() ) : ?>
-
+		<div class="row">
+				<div class="col-lg-9">
+											<?php if ( have_posts() ) : ?>
+			
 					<header class="page-header">
 
 							<h1 class="page-title">
@@ -60,14 +61,15 @@ $container = get_theme_mod( 'understrap_container_type' );
 					<?php get_template_part( 'loop-templates/content', 'none' ); ?>
 
 				<?php endif; ?>
+						</div>
+													<!-- Get the custom right sidebar -->
+			<?php get_template_part( 'global-templates/custom-right-sidebar' ); ?>
+					</div>
+	
+					</div>
 
 			</main><!-- #main -->
 
-			<!-- The pagination component -->
-			<?php understrap_pagination(); ?>
-
-			<!-- Do the right sidebar check -->
-			<?php get_template_part( 'global-templates/right-sidebar-check' ); ?>
 
 		</div><!-- .row -->
 
