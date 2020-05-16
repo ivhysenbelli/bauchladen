@@ -189,7 +189,7 @@ if ( ! class_exists( 'Understrap_WP_Bootstrap_Navwalker' ) ) {
 			}
 
 			// If item has_children add atts to <a>.
-			if ( isset( $args->has_children ) && $args->has_children && 0 === $depth && 1 !== $args->depth ) {
+			if ( isset( $args->has_children ) && $args->has_children && 0 === $depth && 2 !== $args->depth ) {
 
 				if ( wp_is_mobile() ) {
 				    // Parent link inactive

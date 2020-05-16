@@ -34,6 +34,7 @@ foreach ( $understrap_includes as $file ) {
 
 register_nav_menus( array(
     'categories_sidebar_menu' => 'Categories Sidebar Menu',
+    'mobile_menu'			  => 'Mobile Menu',
 ) );
 
 

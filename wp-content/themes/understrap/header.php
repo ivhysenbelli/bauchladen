@@ -60,9 +60,24 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
 					<span class="navbar-toggler-icon"></span>
 				</button>
+				<?php 
 
-				<!-- The WordPress Menu goes here -->
-				<?php wp_nav_menu(
+					if ( wp_is_mobile() ) {
+					 /* Display and echo mobile specific stuff here */
+					 wp_nav_menu(
+							array(
+								'theme_location'  => 'mobile_menu',
+								'container_class' => 'collapse navbar-collapse',
+								'container_id'    => 'navbarNavDropdown',
+								'menu_class'      => 'navbar-nav ml-auto',
+								'fallback_cb'     => '',
+								'menu_id'         => 'mobile-menu',
+								'depth'           => 3,
+							)
+						);
+					 }
+					 else{
+					 	wp_nav_menu(
 					array(
 						'theme_location'  => 'primary',
 						'container_class' => 'collapse navbar-collapse',
@@ -70,10 +85,14 @@ $container = get_theme_mod( 'understrap_container_type' );
 						'menu_class'      => 'navbar-nav ml-auto',
 						'fallback_cb'     => '',
 						'menu_id'         => 'main-menu',
-						'depth'           => 3,
+						'depth'           => 2,
 						'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
 					)
-				); ?>
+				);
+					 }
+				?>
+
+
 			<?php if ( 'container' === $container ) : ?>
 			</div><!-- .container -->
 			<?php endif; ?>

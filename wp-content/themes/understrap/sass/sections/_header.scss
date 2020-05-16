@@ -31,10 +31,13 @@
         }
     }
 
+
+
     .navbar-brand {
         img {
             width: 100%;
-            @include media-breakpoint-down(sm){
+
+            @include media-breakpoint-down(sm) {
                 max-width: 250px;
             }
         }
@@ -68,6 +71,7 @@
                     &:hover {
                         color: $primary;
                     }
+
                     @include media-breakpoint-down(lg) {
                         padding: 0 8px;
                         font-size: 14px;
@@ -80,40 +84,150 @@
                     }
                 }
             }
-            &.dropdown-menu{
+
+            &.dropdown-menu {
                 border: 0;
                 border-radius: 0;
                 margin: 0;
-                li{
+
+                li {
                     padding: 0;
                     text-align: left;
                     text-transform: capitalize;
-                    a{
+
+                    a {
                         padding: 1em;
                         font-size: 15px;
                         color: $zambezi;
                     }
+
                     &.current_page_item {
-                        a{
+                        a {
                             color: $zambezi;
                         }
                     }
                 }
-                @include media-breakpoint-down(md){
+
+                @include media-breakpoint-down(md) {
                     padding: 0 2em;
-                    li{
-                        a{
+
+                    li {
+                        a {
                             padding: 0;
                         }
                     }
                 }
             }
-            &.third-level-menu{
-                @inclue media-breakpoint-up(md){
+
+            &.third-level-menu {
+                @include media-breakpoint-up(md) {
                     display: none !important;
                 }
             }
         }
+    }
+
+    #mobile-menu {
+        ul {
+            list-style: none;
+        }
+
+        ul {
+
+            li {
+                &.current-menu-item {
+                    a {
+                        color: $primary;
+                    }
+                }
+
+                &.current-menu-parent {
+                    a {
+                        color: $primary;
+                    }
+                }
+            }
+
+            &.second-level-menu {
+                padding: 0;
+                margin: 0;
+                padding-left: 10px;
+
+                li {
+                    font-size: 1rem;
+                    text-transform: capitalize;
+
+                    a {
+                        color: $zambezi;
+                    }
+
+
+                    &.current-menu-item {
+                        a {
+                            color: $primary;
+                        }
+                    }
+
+                }
+
+                &.show-item {
+                    min-height: 20px;
+                    height: auto;
+                    opacity: 1;
+                    visibility: visible;
+                    display: block;
+                }
+            }
+
+            &.third-level-menu {
+                padding: 0;
+                padding-left: 10px;
+
+                li {
+                    padding: 0;
+                    margin: 0;
+
+                    a {
+                        color: $zambezi;
+
+                        &:after {
+                            display: block;
+                            content: '';
+                        }
+                    }
+
+                    &.current-menu-item {
+                        a {
+                            color: $primary;
+                        }
+                    }
+
+
+                }
+
+            }
+
+        }
+
+        li {
+            &.menu-item-has-children {
+                a {
+                    display: flex;
+                    display: flex;
+                    align-items: center;
+
+                    &:after {
+                        margin-left: 10px;
+                        display: block;
+                        content: '\f107';
+                        font-family: 'FontAwesome';
+                    }
+                }
+
+            }
+        }
+
+
     }
 
     &.scrolled {
@@ -143,6 +257,7 @@
             }
         }
     }
+
 }
 
 .home {
@@ -169,6 +284,7 @@
         @include media-breakpoint-down(md) {
             position: relative;
             padding: 0 1em;
+
             .navbar-brand {
                 img {
                     display: block;

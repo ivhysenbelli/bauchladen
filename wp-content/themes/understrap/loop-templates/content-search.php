@@ -24,7 +24,7 @@ defined( 'ABSPATH' ) || exit;
 
 			<div class="entry-meta">
 
-				<?php understrap_posted_on(); ?>
+				<?php the_title(); ?>
 
 			</div><!-- .entry-meta -->
 
@@ -37,11 +37,5 @@ defined( 'ABSPATH' ) || exit;
 		<?php the_excerpt(); ?>
 
 	</div><!-- .entry-summary -->
-
-	<footer class="entry-footer">
-
-		<?php understrap_entry_footer(); ?>
-
-	</footer><!-- .entry-footer -->
 
 </article><!-- #post-## -->
